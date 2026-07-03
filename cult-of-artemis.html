@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE CULT OF ARTEMIS — the weekend</title>
+<style>
+  :root{
+    --night:#171019; --panel:#231827; --edge:#442c48;
+    --ivory:#F2EAD8; --dim:#C9C2B2; --slate:#a58fa8;
+    --gold:#E8C476; --pink:#E36BB0; --pink-deep:#8E3B62; --white:#F5F1E6; --holstein:#12131d;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:radial-gradient(1000px 600px at 80% -5%, #33203a 0%, transparent 60%),var(--night);color:var(--ivory);font-family:var(--serif);font-size:1.03rem;line-height:1.6;}
+  a{color:var(--gold);}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+  .label{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--pink);}
+  header{text-align:center;padding:56px 20px 30px;}
+  header h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:500;letter-spacing:.06em;margin:12px 0 6px;}
+  header .tagline{font-style:italic;color:var(--dim);margin:0;}
+  header .meta{font-family:var(--sans);font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--slate);margin-top:16px;}
+  .emblem{width:110px;height:110px;filter:drop-shadow(0 0 26px rgba(227,107,176,.35));}
+  .back{font-family:var(--sans);font-size:.8rem;margin-top:14px;display:inline-block;color:var(--slate);text-decoration:none;}
+  .grid{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:16px;margin:30px 0;align-items:start;}
+  .col{display:flex;flex-direction:column;gap:10px;}
+  .dh{text-align:center;padding:8px 6px 10px;}
+  .dh .dow{font-family:var(--serif);font-size:1.5rem;letter-spacing:.14em;color:var(--gold);display:block;line-height:1.1;}
+  .dh .date{font-family:var(--sans);font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:var(--slate);}
+  .blk{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--bc,var(--slate));border-radius:5px;padding:12px 14px;}
+  .blk .t{font-family:var(--sans);font-size:.64rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--bc,var(--slate));display:block;margin-bottom:3px;}
+  .blk .n{font-weight:600;}
+  .blk .d{display:block;font-family:var(--sans);font-size:.8rem;color:var(--dim);margin-top:3px;line-height:1.5;}
+  .blk--hero{background:linear-gradient(160deg, rgba(227,107,176,.16), var(--panel) 72%);border-left-width:4px;padding:16px 14px;}
+  .blk--hero .n{font-size:1.2rem;}
+  section{padding:26px 0;}
+  h2{font-size:1.5rem;font-weight:500;margin:0 0 6px;}
+  .note{border:1px solid var(--edge);border-left:3px solid var(--gold);border-radius:6px;background:var(--panel);padding:18px 20px;font-family:var(--sans);font-size:.9rem;color:var(--dim);}
+  .note b{color:var(--gold);}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;}
+  .chip{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.78rem;color:var(--dim);}
+  .chip i{width:15px;height:15px;border-radius:50%;display:inline-block;border:1px solid rgba(242,234,216,.3);}
+  footer{text-align:center;padding:40px 20px 64px;font-family:var(--sans);font-size:.8rem;color:var(--slate);}
+  @media(max-width:700px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="emblem" viewBox="0 0 120 120" role="img" aria-label="A holy cow: cow head with golden halo">
+    <circle cx="60" cy="30" r="17" fill="none" stroke="#E8C476" stroke-width="3.5"/>
+    <ellipse cx="22" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(-18 22 58)"/>
+    <ellipse cx="98" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(18 98 58)"/>
+    <ellipse cx="21" cy="58" rx="8" ry="4" fill="#E3A9C4" transform="rotate(-18 21 58)"/>
+    <ellipse cx="99" cy="58" rx="8" ry="4" fill="#E3A9C4" transform="rotate(18 99 58)"/>
+    <path d="M38 46 C34 38 36 32 42 28" fill="none" stroke="#E8C476" stroke-width="4" stroke-linecap="round"/>
+    <path d="M82 46 C86 38 84 32 78 28" fill="none" stroke="#E8C476" stroke-width="4" stroke-linecap="round"/>
+    <rect x="32" y="42" width="56" height="58" rx="24" fill="#F2EAD8"/>
+    <path d="M36 52 C36 44 50 42 54 50 C58 58 48 66 40 63 C35 61 36 56 36 52 Z" fill="#1A2438"/>
+    <circle cx="47" cy="64" r="3.4" fill="#101623"/><circle cx="73" cy="64" r="3.4" fill="#101623"/>
+    <rect x="40" y="76" width="40" height="22" rx="11" fill="#E3A9C4"/>
+    <circle cx="52" cy="87" r="3" fill="#B26A8B"/><circle cx="68" cy="87" r="3" fill="#B26A8B"/>
+  </svg>
+  <p class="label" style="margin:18px 0 0;">Universe II</p>
+  <h1>THE CULT OF ARTEMIS</h1>
+  <p class="tagline">Same pantheon. One correction.</p>
+  <p class="meta">Orchard Hill Estate · Jul 30 – Aug 2</p>
+  <a class="back" href="index.html">← all universes</a>
+</header>
+
+<div class="wrap">
+
+  <div class="grid">
+    <div class="col">
+      <div class="dh"><span class="dow">FRI</span><span class="date">Jul 31 · Thu-night advance crew</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">All day</span><span class="n">The herd gathers</span><span class="d">Bed claims, pool shakeout. The Idol is already on the lawn. Nobody explains her.</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">Evening</span><span class="n">First supper</span><span class="d">All toasts to Artemis. New guests will catch on. Eventually.</span></div>
+      <div class="blk blk--hero" style="--bc:var(--pink);"><span class="t">Night</span><span class="n">THE MYSTERIES</span><span class="d">Sardines in total darkness — the rite of hiding from that which seeks. Survivors are ordained at dawn (or midnight, whichever).</span></div>
+    </div>
+    <div class="col">
+      <div class="dh"><span class="dow">SAT</span><span class="date">Aug 1 · high holy day</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">Morning</span><span class="n">Ordination</span><span class="d">Every guest receives their minor deity — Keeper of the AUX, Warden of the Ice — with name-scroll. Cups bear tiny Artemises, as is tradition.</span></div>
+      <div class="blk" style="--bc:var(--pink);"><span class="t">Day</span><span class="n">Pool worship</span><span class="d">Water-gun libations. Consecration of the Bouncy Temple.</span></div>
+      <div class="blk" style="--bc:var(--pink);"><span class="t">Day</span><span class="n">Trial of the Gorilla</span><span class="d">Jonny is the Gorilla in the Middle, as the prophecy requires.</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">Golden hour</span><span class="n">Feast of First Fruits</span><span class="d">Chef feast. There will be an apple course, obviously.</span></div>
+      <div class="blk blk--hero" style="--bc:var(--pink);"><span class="t">Night → late</span><span class="n">THE ECSTATIC RITES</span><span class="d">Lightning by Danny, the cult’s own storm-bringer. Then the rave — until the moon, her domain, approves.</span></div>
+    </div>
+    <div class="col">
+      <div class="dh"><span class="dow">SUN</span><span class="date">Aug 2 · the grazing</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">Morning</span><span class="n">Slow pasture</span><span class="d">The herd grills and floats.</span></div>
+      <div class="blk" style="--bc:var(--gold);"><span class="t">Midday</span><span class="n">The herd portrait</span><span class="d">Thirty-two deities, one Idol, front and center.</span></div>
+      <div class="blk" style="--bc:var(--slate);"><span class="t">Afternoon</span><span class="n">Final blessing</span><span class="d">Departures, dispensed by the Idol. Moo.</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>The look</h2>
+    <div class="chips">
+      <span class="chip"><i style="background:#F2D68C"></i>Idol gold</span>
+      <span class="chip"><i style="background:#F5F1E6"></i>Sacred white</span>
+      <span class="chip"><i style="background:#12131d"></i>Holstein black</span>
+      <span class="chip"><i style="background:#E36BB0"></i>Ritual pink</span>
+    </div>
+    <div class="note">
+      <b>Dress:</b> Olympus formal, cow-print devotional accents encouraged. The faithful will know each other.<br><br>
+      <b>The rule:</b> nobody explains the cow to new guests. Ever. They must piece it together, as we all did. (The Oracle booth — the photo booth, reborn — dispenses printed prophecies of dubious accuracy.)
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <a href="index.html">← all universes</a> · <a href="first-contact.html">next universe →</a><br><br>
+  Rank your top two in the group chat by Sunday, July 12.
+</footer>
+</body>
+</html>

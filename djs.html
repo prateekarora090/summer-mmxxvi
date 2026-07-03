@@ -1,0 +1,265 @@
+<title>The DJ Hunt — Summer MMXXVI</title>
+<style>
+  :root{
+    --night:#101623; --night-deep:#0B101B; --panel:#161f31; --panel-edge:#26324b;
+    --ivory:#F2EAD8; --ivory-dim:#C9C2B2; --slate:#8A93A8;
+    --gold:#E8C476; --gold-deep:#C99436; --aegean:#6FB3C8; --sage:#8CBF8A; --pink:#E36BB0; --veto:#D25858;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --meander:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16' viewBox='0 0 28 16'%3E%3Cpath d='M0 13 H7 V3 H21 V13 H28 M11 13 V8 H17 V11' fill='none' stroke='%23E8C476' stroke-width='1.4' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:radial-gradient(1100px 600px at 85% -5%, #1b2740 0%, transparent 60%), var(--night);
+    color:var(--ivory); font-family:var(--serif); font-size:1.03rem; line-height:1.62; margin:0;
+  }
+  ::selection{background:var(--gold-deep);color:var(--night-deep);}
+  a{color:var(--gold);}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+  .label{font-family:var(--sans);font-size:.71rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);}
+  .label--dim{color:var(--slate);}
+  header{text-align:center;padding:64px 20px 36px;}
+  header h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:500;letter-spacing:.05em;margin:14px 0 8px;text-wrap:balance;}
+  header .sub{font-style:italic;color:var(--ivory-dim);max-width:46ch;margin:0 auto;}
+  .meander-rule{height:16px;background:var(--meander) repeat-x center;max-width:220px;margin:0 auto;}
+  .backlink{font-family:var(--sans);font-size:.8rem;display:inline-block;margin-top:18px;color:var(--slate);}
+  .backlink a{color:var(--aegean);text-decoration:none;}
+  section{padding:34px 0;}
+  h2{font-size:clamp(1.4rem,4vw,1.85rem);font-weight:500;margin:10px 0 4px;letter-spacing:.02em;text-wrap:balance;}
+  .kicker{color:var(--ivory-dim);font-style:italic;margin:2px 0 18px;}
+  p{margin:12px 0;}
+  .smallprint{font-family:var(--sans);font-size:.78rem;color:var(--slate);line-height:1.6;}
+
+  .brief{
+    background:var(--panel);border:1px solid var(--panel-edge);border-left:3px solid var(--gold);
+    border-radius:6px;padding:22px 24px;margin:20px 0;
+  }
+  .brief b{color:var(--gold);font-weight:600;}
+  .lanes{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .lane{font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.04em;
+    border:1px solid var(--panel-edge);border-radius:99px;padding:5px 12px;color:var(--ivory-dim);}
+  .lane--core{border-color:var(--gold);color:var(--gold);}
+
+  .tier{margin-top:26px;}
+  .tier-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--panel-edge);padding-bottom:8px;margin-bottom:6px;}
+  .tier-head h3{font-size:1.3rem;font-weight:500;margin:0;letter-spacing:.02em;}
+  .tier-head .label{margin:0;}
+
+  .dj{
+    background:var(--panel);border:1px solid var(--panel-edge);border-radius:6px;
+    padding:20px 22px;margin:14px 0;
+  }
+  .dj-top{display:flex;justify-content:space-between;gap:14px;align-items:baseline;flex-wrap:wrap;}
+  .dj h4{font-size:1.15rem;font-weight:600;margin:0;letter-spacing:.02em;}
+  .dj h4 .base{font-weight:400;color:var(--slate);font-size:.9rem;font-family:var(--sans);}
+  .fit{margin:8px 0 12px;color:var(--ivory-dim);}
+  .fit b{color:var(--ivory);font-weight:600;}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px 18px;
+    font-family:var(--sans);font-size:.83rem;color:var(--ivory-dim);
+    border-top:1px solid rgba(38,50,75,.7);padding-top:12px;}
+  .facts div b{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:600;margin-bottom:2px;}
+  .chip{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:99px;white-space:nowrap;}
+  .chip--high{background:rgba(140,191,138,.15);color:var(--sage);}
+  .chip--med{background:rgba(232,196,118,.15);color:var(--gold);}
+  .chip--low{background:rgba(138,147,168,.16);color:var(--slate);}
+  .chip--moon{background:rgba(227,107,176,.14);color:var(--pink);}
+  .next{font-family:var(--sans);font-size:.85rem;margin-top:12px;padding-top:10px;border-top:1px dashed rgba(38,50,75,.9);color:var(--ivory-dim);}
+  .next b{color:var(--aegean);font-weight:700;letter-spacing:.08em;font-size:.68rem;text-transform:uppercase;display:inline-block;margin-right:6px;}
+
+  .note{
+    border:1px dashed var(--panel-edge);border-radius:6px;padding:18px 20px;margin:16px 0;
+    font-family:var(--sans);font-size:.88rem;color:var(--ivory-dim);
+  }
+  .note b{color:var(--gold);font-weight:600;}
+  ol.steps{margin:14px 0 0;padding-left:22px;}
+  ol.steps li{margin:10px 0;}
+  ol.steps b{font-weight:600;}
+  footer{text-align:center;padding:44px 20px 70px;}
+  footer .meander-rule{margin-bottom:26px;}
+  @media(max-width:560px){ header{padding-top:44px;} section{padding:24px 0;} }
+</style>
+
+<header>
+  <div class="meander-rule"></div>
+  <p class="label" style="margin-top:26px;">Summer MMXXVI · Quest Board · Saturday Night</p>
+  <h1>THE DJ HUNT</h1>
+  <p class="sub">One selector to carry the Mystery Rite. Here's the field — priced, ranked, and ready for the founders' verdict.</p>
+  <p class="backlink"><a href="index.html">← back to the universes</a></p>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>The sound we're buying</h2>
+    <p class="kicker">The spec both founders sign off on:</p>
+    <div class="brief">
+      <p style="margin-top:0;"><b>Stutter house / future bass</b> — the Fred again.. lineage: chopped, emotional vocals over house grooves that still hit. Teek's collection runs Daniel Allan, it's murph, BUNT., nimino, Atura, jigitz; Dan's home base is <b>house</b> — and stutter house is exactly where those two meet: house bones, feelings on top.</p>
+      <p style="margin-bottom:0;">The official sound brief is a real playlist: <a href="https://open.spotify.com/playlist/7lyG8eMF3MB9XjJD2Luyrd"><b>the '26 set list</b> on Spotify</a> — attach it to every inquiry.</p>
+      <div class="lanes">
+        <span class="lane lane--core">Stutter house</span>
+        <span class="lane lane--core">Future bass</span>
+        <span class="lane lane--core">Melodic / vocal house</span>
+        <span class="lane">UKG &amp; bassline (spice)</span>
+        <span class="lane">DnB flips of vocal tunes (spice)</span>
+        <span class="lane">Festival house</span>
+        <span class="lane">Millennial nostalgia (closer fuel)</span>
+      </div>
+    </div>
+    <p class="smallprint">How to read the cards: prices are <em>estimates</em> until quotes come back; availability for Sat Aug 1 always requires an ask; “bookability” = how reachable + private-event-ready they are, which is what we actually control today. Nobody has been contacted yet.</p>
+  </section>
+
+  <section>
+    <div class="tier">
+      <div class="tier-head"><p class="label">Tier 1</p><h3>The Dream Play — two inquiries, three quotes</h3></div>
+      <p class="kicker">Re-verified first-hand Jul 3: <b>jigitz</b> is confirmed on the Wasserman/THE·TEAM roster (agents Evan Hancock &amp; Nate Sokolski); <b>33 Below</b>'s roster page sits at the same agency; <b>it's murph</b> books private events through Jay Siegan Presents. No public rates exist at this tier — the estimates below are career-stage guesses, and the quote is the only real number (typically 24–72h to get one).</p>
+
+      <div class="dj">
+        <div class="dj-top"><h4>it's murph <span class="base">· touring, US</span></h4><span class="chip chip--high">Bookability: High</span></div>
+        <p class="fit"><b>The archetype.</b> His genre is literally called stutter house, he's in the Fred again../Flume lineage, he's one of Teek's top-3 most-played artists this month — and his private/corporate events page at Jay Siegan Presents is real and live (verified Jul 3: <a href="https://www.jspevents.com/talent/its-murph">jspevents.com/talent/its-murph</a> — "corporate events, fundraisers, galas, private parties"). If he's free, this is the party.</p>
+        <div class="facts">
+          <div><b>Est. price</b>No public rate — expect $3k–8k+ (estimate only; the quote is the real number)</div>
+          <div><b>Availability</b>Unknown — touring; ask fast</div>
+          <div><b>Brings sound</b>Assume no — rig rented separately</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/its-murph-987074444">SoundCloud</a></div>
+        </div>
+        <p class="next"><b>Next step</b>Inquiry via his verified private-events page (Jay Siegan Presents) — date, estate, guest count, budget cap, set list attached.</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>jigitz <span class="base">· Brooklyn</span></h4><span class="chip chip--high">Bookability: High</span></div>
+        <p class="fit"><b>Local and in the bloodstream.</b> Verified Jul 3: Brooklyn-based, exclusive Wasserman/THE·TEAM roster artist (agents: <b>Evan Hancock &amp; Nate Sokolski</b>), "tell you straight" spent weeks on the Billboard Dance Chart, known for frantic in-the-round sets — imagine that on the lawn. All over Teek's daily mixes.</p>
+        <div class="facts">
+          <div><b>Est. price</b>No public rate — expect $1.5k–4k (estimate only)</div>
+          <div><b>Availability</b>Unknown — mid-tour; local helps</div>
+          <div><b>Brings sound</b>Assume no</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/jigitz">SoundCloud</a></div>
+        </div>
+        <p class="next"><b>Next step</b>THE·TEAM inquiry naming agents Hancock/Sokolski (the.team/music-talent/contact-us) — same email can ask about 33 Below below.</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>33 Below <span class="base">· NZ→London, in Brooklyn Jul 31–Aug 1</span></h4><span class="chip chip--moon">Moonshot — uniquely possible</span></div>
+        <p class="fit"><b>The cosmic coincidence.</b> Emotional UKG + liquid DnB, and his remix of Odd Mob's “LEFT TO RIGHT” is <em>already on the '26 set list</em>. Verified Jul 3: he supports Sammy Virji at Brooklyn Army Terminal <b>both nights of our weekend</b> (Jul 31 + Aug 1 — night two sold out, doors 4 PM). Open-air support slots run early — a late estate set after his Saturday slot is physically plausible, purely an ask.</p>
+        <div class="facts">
+          <div><b>Est. price</b>Unknown — tour add-on pricing (estimate territory)</div>
+          <div><b>Availability</b>In Brooklyn our exact weekend; constrained by BAT set times</div>
+          <div><b>Brings sound</b>No — traveling artist</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/33below">SoundCloud</a></div>
+        </div>
+        <p class="next"><b>Next step</b>One line in the THE·TEAM email above, plus his private-events channel at bnmusic-artists.com/33-below as a parallel door.</p>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-head"><p class="label">Tier 2</p><h3>Local center-fits — direct outreach</h3></div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>BAILE <span class="base">· Brooklyn</span></h4><span class="chip chip--med">Bookability: Medium — IG only</span></div>
+        <p class="fit"><b>The melodic specialist.</b> Textured, vocal, emotional electronic on HY Records (RÜFÜS DU SOL's label) with BBC Radio 1 support — the closest local match to the stutter-house center. Untested as a 4-hour peak-time selector: strongest as the sunset-into-dark half of a co-bill, or solo if his mixes convince you.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$800–1.5k (est.)</div>
+          <div><b>Availability</b>Unknown</div>
+          <div><b>Brings sound</b>Unknown — assume no</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/clashmagazine/clash-dj-mix-baile">Clash DJ mix</a></div>
+        </div>
+        <p class="next"><b>Next step</b>DM @bailemusic on IG (slower channel — send early).</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>Swami Sound <span class="base">· NYC</span></h4><span class="chip chip--high">Bookability: High — has NA agent</span></div>
+        <p class="fit"><b>The vocal-garage star.</b> UK garage built on angelic 2010s R&amp;B vocals — emotional-vocal center, nostalgia ammo included. UKG-first rather than house-first, so he colors slightly Teek; a gorgeous pick if the founders want the night to lean garage.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$1k–2k and rising (est.)</div>
+          <div><b>Availability</b>Unknown — profile rising fast</div>
+          <div><b>Brings sound</b>Not advertised — assume no</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/masutaswami/swami-sound-guest-dj-mix-kexp-august-3rd-2025">KEXP guest mix</a></div>
+        </div>
+        <p class="next"><b>Next step</b>Email brent@good-direction.agency.</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>Doctor Jeep <span class="base">· Brooklyn</span></h4><span class="chip chip--high">Bookability: High — has agent</span></div>
+        <p class="fit"><b>The technician.</b> Rinse FM resident; Boiler Room / EDC / Bonnaroo CV; the borough's deepest UKG→bassline→DnB range. Default palette is techier than the spec — bookable with a firm “melodic end of your record bag” brief.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$800–1.5k (est.)</div>
+          <div><b>Availability</b>Unknown</div>
+          <div><b>Brings sound</b>Not advertised — assume no</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/rinsefm/doctorjeep030925">Rinse FM at Nowadays</a></div>
+        </div>
+        <p class="next"><b>Next step</b>Email s@icartists.net (Americas).</p>
+      </div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-head"><p class="label">Tier 3</p><h3>Safety nets — the party happens no matter what</h3></div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>Nicole Otero / TCM DJ Events <span class="base">· Brooklyn</span></h4><span class="chip chip--high">Bookability: Very high — privates are her business</span></div>
+        <p class="fit"><b>The logistics anchor.</b> 15+ years of exactly this gig, deep-house DNA, and the only contender who advertises bringing full pro sound. Sound-fit is conditional: her defaults run deep/disco, so she plays this party only if she'll happily work a stutter-house/UKG brief — ask directly.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$500–1.2k, possibly incl. sound (est.)</div>
+          <div><b>Availability</b>Unknown — books summer weekends early</div>
+          <div><b>Brings sound</b>Advertised yes (confirm specs)</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/djnicoleotero">SoundCloud</a></div>
+        </div>
+        <p class="next"><b>Next step</b>Email nicole@djnicoleotero.com with the playlist: “can you play THIS?”</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>BK Loves UKG crew + MC <span class="base">· Brooklyn</span></h4><span class="chip chip--med">Bookability: Medium — DIY crew</span></div>
+        <p class="fit"><b>The value play.</b> Brooklyn's dedicated UKG/DnB collective (free monthly at Main Drag Music, own label): two rotating residents + a resident MC could hold the whole night at likely the lowest cost here. Bass-first rather than melodic-first — audition residents on the label SoundCloud before offering.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$400–800 total (est.)</div>
+          <div><b>Availability</b>Unknown</div>
+          <div><b>Brings sound</b>Most plausible rig-owners on the list — ask</div>
+          <div><b>Listen</b><a href="https://soundcloud.com/bk-loves-recs">BK Loves Recs</a></div>
+        </div>
+        <p class="next"><b>Next step</b>Email bklovesrecs@gmail.com / IG @bklovesukg.</p>
+      </div>
+
+      <div class="dj">
+        <div class="dj-top"><h4>The Founder Set <span class="base">· the host himself</span></h4><span class="chip chip--high">Bookability: Guaranteed</span></div>
+        <p class="fit"><b>The $0 floor.</b> Teek has DJ'd these before, the set list is already curated, and the rig gets rented either way. Worst case is not bad at all — and “the host closes the night” is a strong tradition even if a booked DJ takes the peak slot.</p>
+        <div class="facts">
+          <div><b>Est. price</b>$0 + rig rental</div>
+          <div><b>Availability</b>Confirmed (he lives here)</div>
+          <div><b>Brings sound</b>See rig note below</div>
+          <div><b>Listen</b>Attend the party</div>
+        </div>
+        <p class="next"><b>Next step</b>None. This one's already booked, emotionally.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The rig — needed in every scenario</h2>
+    <div class="note">
+      <p style="margin-top:0;">No on-spec contender advertises owning a PA, and the estate has none. So the rental is a fixed line item, not a contingency: <b>~$325</b> (2× QSC K12 tops + sub — plenty for 30 people) to <b>~$999</b> (full club-standard CDJ rig) per day from NYC houses like DJ Rental Gear; <b>A&amp;T's House of Bounce is Harriman-local with free delivery</b> (confirm the estate's address is in-zone). Writing “sound is provided” into every inquiry gets cleaner, lower quotes.</p>
+      <p style="margin-bottom:0;">Venue rhythm: outdoors by the pool ~8–10 PM (town quiet hours), then the rig moves indoors and the night keeps going.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Context the founders should know</h2>
+    <div class="note">
+      <b>Sammy Virji plays Brooklyn Army Terminal on BOTH Jul 31 and Aug 1</b> — our exact (and fixed) weekend, with X CLUB. and 33 Below supporting. Read: some guests will feel the pull, so the party's answer is confidence — book a selector who brings that same energy to a private lawn 45 minutes north, and let the lore say what it's always said: <em>the estate is the afters.</em> Bonus: the touring bass world is physically in NYC that weekend, which is exactly why the 33 Below moonshot exists.
+    </div>
+  </section>
+
+  <section>
+    <h2>Next steps</h2>
+    <ol class="steps">
+      <li><b>Founders align on budget band</b> — Tier 1 dream (likely $2.5k+), Tier 2 local (~$1–2k), or Tier 3 floor (~$0–1k). (This call.)</li>
+      <li><b>Approve outreach drafts</b> — every email personalized, set list attached, “sound provided,” asks: availability Aug 1 · rate for a 4-hr evening set · travel. Drafts are written and waiting on a yes.</li>
+      <li><b>Fire simultaneously</b> — the THE·TEAM inquiry (jigitz + 33 Below), the Jay Siegan inquiry (it's murph), and the Tier 2/3 directs. Decide on real quotes, not estimates. No deposits until the pick is made.</li>
+    </ol>
+  </section>
+
+</div>
+
+<footer>
+  <div class="meander-rule"></div>
+  <p class="smallprint">Summer MMXXVI · Orchard Hill Estate, Harriman NY · Sat Aug 1 — the night the Signal goes out</p>
+  <p class="smallprint"><a href="index.html">← the universes</a> · estimates are estimates until quotes land · no gods, DJs, or gorillas were contacted in the making of this page</p>
+</footer>
