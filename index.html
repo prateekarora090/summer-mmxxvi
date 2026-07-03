@@ -293,6 +293,10 @@
   .steps b{font-weight:600;}
   .steps span{color:var(--ivory-dim);}
 
+  .u-photo{margin:20px 0 4px;border-radius:8px;overflow:hidden;border:1px solid var(--panel-edge);}
+  .u-photo img{width:100%;display:block;}
+  .u-photo figcaption{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--slate);padding:8px 12px;border-top:1px solid var(--panel-edge);}
+
   .pick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:28px 0 10px;}
   .pick{display:flex;flex-direction:column;gap:4px;background:var(--panel);border:1px solid var(--panel-edge);border-top:3px solid var(--tint);border-radius:6px;padding:16px;text-decoration:none;}
   .pick-num{font-family:var(--sans);font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tint);}
@@ -327,6 +331,19 @@
   .chip--active{background:rgba(111,179,200,.15);color:var(--aegean);}
   .chip--open{background:rgba(138,147,168,.14);color:var(--slate);}
   .chip--decide{background:rgba(232,196,118,.15);color:var(--gold);}
+
+  /* ---------- VAULT ---------- */
+  .vault{
+    display:flex;align-items:center;gap:18px;margin-top:26px;
+    background:linear-gradient(160deg, rgba(232,196,118,.10), var(--panel) 70%);
+    border:1px solid var(--gold-deep);border-radius:8px;padding:20px 22px;text-decoration:none;
+  }
+  .vault-lock{font-size:1.6rem;}
+  .vault-body{display:flex;flex-direction:column;gap:4px;flex:1;}
+  .vault-title{font-family:var(--serif);font-size:1.15rem;color:var(--gold);letter-spacing:.03em;}
+  .vault-desc{font-family:var(--sans);font-size:.84rem;color:var(--ivory-dim);line-height:1.55;}
+  .vault-cta{font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--gold);white-space:nowrap;}
+  @media(max-width:560px){.vault{flex-direction:column;align-items:flex-start;}}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -405,7 +422,7 @@
       <div class="meander-rule"></div>
       <p class="label" style="margin-top:34px;">The universes</p>
       <h2>Three worlds. One weekend. Vote.</h2>
-      <p class="kicker">The Committee called <em>Greek Gods</em> — and the estate is literally an orchard, so the golden apples were coming either way. (The last apple dispute burned Troy. We’re using a website.) Same weekend underneath all three; pick the world it happens in.</p>
+      <p class="kicker">The Committee called <em>Greek Gods</em> — and the estate is literally an orchard, so the golden apples were coming either way. Three universes below, and they <b>nest</b>: each one contains everything in the last. The vote isn’t which world survives — it’s how far the pantheon grows.</p>
     </div>
 
     <!-- ===== UNIVERSE I: DIONYSIA ===== -->
@@ -442,20 +459,21 @@
         <div>
           <p class="numeral">Universe I</p>
           <h3>DIONYSIA</h3>
-          <p class="tagline">The god is late. The party starts without him.</p>
+          <p class="tagline">The pantheon is the guest list.</p>
         </div>
+        <figure class="u-photo"><a href="dionysia.html"><img src="img/universe-1.jpg" alt="Flat vector poster: Greek gods at a rowdy estate pool party — Zeus cannonballing, Apollo DJing on golden decks, Dionysus on a flamingo floatie" loading="lazy"/></a><figcaption>UNIVERSE I — THE PANTHEON, ASSEMBLED</figcaption></figure>
       </div>
 
       <div class="lore">
         <p>Greek Gods — correct. The only open question is <b>which god gets the keys.</b> And the scholars are unanimous: when Olympus needed a real night out, nobody called Zeus. They called Dionysus — inventor of the mystery rite, the masked festival, and, two millennia early and without credit, the after-party.</p>
-        <p>The gag that runs the whole weekend: <b>the host god never shows.</b> A garlanded throne on the lawn — empty. A place set at the feast — untouched. Every toast raised to a god who is, apparently, running late. Nobody explains it. Then Saturday night, when Danny’s lights fire and the first drop lands: <b>HE’S HERE.</b></p>
-        <p>Otherwise the canon holds — gold, laurels, masks at nightfall, and a rave the ancients would recognize on sight, because they held it first.</p>
+        <p>The mechanic that runs the whole weekend: <b>everyone gets anointed.</b> At arrival, each guest is ordained a god of something weirdly specific — name-scroll, laurel, no appeals process. Thirty-two mortals walk in; thirty-two gods sit down to dinner. The Committee holds the sacred drafts.</p>
+        <p>Around that: gold, ivy, masks at nightfall, and a rave the ancients would recognize on sight, because they held it first.</p>
       </div>
 
       <h4>The weekend, translated</h4>
       <ul class="daymap">
         <li><span class="day">FRI</span><span><b>The Initiation.</b> <span>Sardines in the dark is the first Mystery — the ancients also hid in dark places and called it religion. What happens in the dark becomes canon.</span></span></li>
-        <li><span class="day">SAT</span><span><b>Games of the Vine, then the Rite.</b> <span>Wine-dark pool, water artillery, the Bouncy Temple, and Gorilla in the Middle — Jonny defending his eternal title as the Minotaur. Symposium at golden hour, one seat conspicuously empty. Then the lights fire — <b>HE’S HERE</b> — and the Mystery Rite runs until the ivy takes the walls.</span></span></li>
+        <li><span class="day">SAT</span><span><b>Games of the Vine, then the Rite.</b> <span>Wine-dark pool, water artillery, the Bouncy Temple, and Gorilla in the Middle — Jonny defending his eternal title as the Minotaur. Symposium at golden hour: thirty-two freshly minted gods, one long table. Then Danny’s lights call nightfall and the Mystery Rite runs until the ivy takes the walls.</span></span></li>
         <li><span class="day">SUN</span><span><b>The Aftermyth.</b> <span>Heroes graze, float, and compare unreliable testimony of the night before.</span></span></li>
       </ul>
 
@@ -468,13 +486,13 @@
       </div>
       <ul class="seeds">
         <li><b>Masks at nightfall</b> — Greek theater was invented for this god: gilded masks handed out as the sun sets. The feast has faces; the rave does not.</li>
-        <li><b>The empty throne</b> — garlanded, roped off, on the lawn from Friday. A place set at every meal. No one explains it. Ever.</li>
+        <li><b>The anointment station</b> — arrival-day ordinations: printed name-scrolls, laurel crowns, a queue of mortals leaving divine.</li>
         <li><b>The wine-dark bar</b> — a signature dark-red ambrosia served from an altar. The Committee names it; the name is law.</li>
       </ul>
 
       <div class="universe-foot">
         <span><b>Dress code:</b> gold, ivy, and anything you’d swear an oath in. Masks after dark.</span>
-        <span><b>Goes hardest if:</b> the throne is never explained all weekend — the only answer anyone gets is Saturday’s drop.</span>
+        <span><b>Goes hardest if:</b> every toast all weekend is raised in-character — decreed by the founders, enforced by no one, obeyed by all.</span>
       </div>
       <p style="margin:18px 0 0;font-family:var(--sans);font-size:.88rem;"><a href="dionysia.html">Walk the full weekend in this universe →</a></p>
     </article>
@@ -509,6 +527,7 @@
           <h3>THE CULT OF ARTEMIS</h3>
           <p class="tagline">Same pantheon. One correction.</p>
         </div>
+        <figure class="u-photo"><a href="cult-of-artemis.html"><img src="img/universe-2.jpg" alt="The same pool party, shifted pink and gold — a haloed holstein cow stands on a marble altar at the center while the gods worship" loading="lazy"/></a><figcaption>UNIVERSE II — SHE TAKES HER SEAT</figcaption></figure>
       </div>
 
       <div class="lore">
@@ -579,10 +598,11 @@
           <h3>FIRST CONTACT</h3>
           <p class="tagline">A carnival descends. It has questions.</p>
         </div>
+        <figure class="u-photo"><a href="first-contact.html"><img src="img/universe-3.jpg" alt="The same party at deep night in teal and violet — a flying saucer beams green light over the pool while little aliens photograph the gods and the haloed cow" loading="lazy"/></a><figcaption>UNIVERSE III — THE VISITORS ARRIVE</figcaption></figure>
       </div>
 
       <div class="lore">
-        <p>And one universe with no gods at all. Something has been monitoring this crew’s annual gatherings for a decade — the inflatables, the glow sticks, the inexplicable devotion to a cow — and has concluded this is where human joy peaks. So it lands. Disguised as the one thing it knows we trust: <b>a traveling carnival.</b></p>
+        <p>And then the universe where the pantheon gets an audience. Something has been monitoring these annual assemblies of gods for a decade — the inflatables, the glow sticks, the devotion to a cow — and has concluded this is where divine joy peaks. So it lands. Disguised as the one thing it knows the gods trust: <b>a traveling carnival.</b></p>
         <p>The games are trials. The prizes are data. The bouncy house is, quite obviously, the mothership. Saturday night we stop pretending we haven’t noticed, and broadcast back.</p>
       </div>
 
@@ -700,6 +720,7 @@
     <div class="meander-rule"></div>
     <p class="label" style="text-align:center;margin-top:34px;">The process</p>
     <h2 style="text-align:center;">How we choose</h2>
+    <p class="kicker" style="text-align:center;">Walk each weekend first. Remember: they stack — choosing III doesn’t lose you I and II.</p>
     <div class="pick-grid">
       <a class="pick" style="--tint:#C4587E;" href="dionysia.html">
         <span class="pick-num">Universe I</span>
@@ -734,8 +755,16 @@
       <div class="meander-rule"></div>
       <p class="label" style="margin-top:34px;">Mission control (preview)</p>
       <h2>The map of quests</h2>
-      <p class="kicker">Once a universe is crowned, this becomes the live board — every quest, its owner, its status.</p>
+      <p class="kicker">The public map. The living version — every quest, its owner, its status, plus thirty-two draft anointments — lives behind the lock.</p>
     </div>
+    <a class="vault" href="https://app.notion.com/p/392fdd51c11d81f9a62bcf6ddacf89d1">
+      <span class="vault-lock">🔒</span>
+      <span class="vault-body">
+        <span class="vault-title">The Planners’ Vault</span>
+        <span class="vault-desc">Draft anointments for all thirty-two guests — absurd on purpose, awaiting the Committee’s judgment — and the live quest board. Stateful, editable, and every edit signs its editor. Committee keys only; mortals hit a locked door.</span>
+      </span>
+      <span class="vault-cta">Enter →</span>
+    </a>
     <div class="tablewrap">
       <table>
         <thead>
@@ -744,7 +773,8 @@
         <tbody>
           <tr><td>Venue</td><td>Dan ✕ Teek</td><td><span class="chip chip--done">Booked</span></td></tr>
           <tr><td>Guest list</td><td>Dan ✕ Teek</td><td><span class="chip chip--done">32 confirmed — at capacity</span></td></tr>
-          <tr><td>Theme + dial</td><td>Everyone (this page)</td><td><span class="chip chip--decide">Deciding — rank by Jul 12</span></td></tr>
+          <tr><td>Theme universe</td><td>Everyone (this page)</td><td><span class="chip chip--decide">Deciding — rank by Jul 12</span></td></tr>
+          <tr><td>Anointments (all 32)</td><td>The Committee</td><td><span class="chip chip--active">Drafted — in the Vault</span></td></tr>
           <tr><td><a href="djs.html">DJ (Sat night) ↗</a></td><td>Teek</td><td><span class="chip chip--active">Hunt underway — board live</span></td></tr>
           <tr><td>Light show</td><td>Danny</td><td><span class="chip chip--active">The tradition holds</span></td></tr>
           <tr><td>Decor direction</td><td>The Committee</td><td><span class="chip chip--open">Awaiting universe</span></td></tr>
