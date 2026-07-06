@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summer MMXXVI — The Enchanted Forest</title>
+<meta property="og:title" content="Summer MMXXVI — The Enchanted Forest">
+<meta property="og:description" content="An enchanted forest. One weekend a year. Jul 30 – Aug 2, Harriman NY.">
+<script src="nav.js" defer></script>
+<style>
+  :root{
+    --edge:#10181B;        /* friday dusk */
+    --hero:#141F1A;        /* treeline dusk-green */
+    --glade:#1B2B1E;       /* saturday canopy day */
+    --deep:#120D20;        /* saturday night violet-black */
+    --dawn:#1C2330;        /* sunday early light */
+    --panel:#1A2620;
+    --panel-edge:#2E4034;
+    --ivory:#F2EAD8;
+    --dim:#C3BCAC;
+    --slate:#8A9891;
+    --lantern:#E8C476;
+    --lantern-deep:#C99436;
+    --moss:#8CBF8A;
+    --fern:#4E7A54;
+    --glow:#7CE38B;
+    --violet:#8B7CF0;
+    --moon:#C9CFE0;
+    --blush:#D9A47E;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --vine:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='16' viewBox='0 0 36 16'%3E%3Cpath d='M0 8 C6 3 12 3 18 8 C24 13 30 13 36 8' fill='none' stroke='%238CBF8A' stroke-width='1.3' opacity='0.55'/%3E%3Cellipse cx='9' cy='4.6' rx='3.4' ry='1.7' fill='%238CBF8A' opacity='0.5' transform='rotate(-24 9 4.6)'/%3E%3Cellipse cx='27' cy='11.4' rx='3.4' ry='1.7' fill='%238CBF8A' opacity='0.5' transform='rotate(-24 27 11.4)'/%3E%3C/svg%3E");
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{margin:0;color:var(--ivory);font-family:var(--serif);font-size:1.04rem;line-height:1.66;background:var(--hero);}
+  ::selection{background:var(--lantern-deep);color:#10181B;}
+  a{color:var(--lantern);}
+  button:focus-visible, a:focus-visible{outline:2px solid var(--lantern);outline-offset:3px;border-radius:2px;}
+
+  .wrap{max-width:660px;margin:0 auto;padding:0 22px;}
+  .label{font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--moss);}
+  .label--gold{color:var(--lantern);}
+  .vine-rule{height:16px;background:var(--vine) repeat-x center;margin:0 auto;max-width:250px;opacity:.9;}
+  p{margin:14px 0;}
+  .smallprint{font-family:var(--sans);font-size:.8rem;color:var(--slate);line-height:1.6;}
+
+  /* ---------- fireflies ---------- */
+  .ff-field{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .ff{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--glow);
+      box-shadow:0 0 8px 2px rgba(124,227,139,.55);opacity:0;animation:ffdrift 9s ease-in-out infinite;}
+  .ff--v{background:var(--violet);box-shadow:0 0 8px 2px rgba(139,124,240,.5);}
+  .ff--g{background:var(--lantern);box-shadow:0 0 8px 2px rgba(232,196,118,.45);}
+  @keyframes ffdrift{
+    0%,100%{opacity:0;transform:translateY(0);}
+    12%{opacity:.9;}
+    50%{opacity:.35;transform:translateY(-26px) translateX(8px);}
+    78%{opacity:.8;}
+  }
+  @media (prefers-reduced-motion:reduce){.ff{animation:none;opacity:.5;}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;position:relative;overflow:hidden;padding:80px 20px 60px;
+    background:linear-gradient(180deg, #0E1513 0%, var(--hero) 55%, var(--edge) 100%);
+  }
+  .hero h1{font-size:clamp(2.7rem,10vw,5rem);font-weight:500;letter-spacing:.06em;line-height:1.04;margin:0;text-wrap:balance;}
+  .hero h1 .numerals{display:block;color:var(--lantern);font-size:clamp(1.6rem,5.5vw,2.6rem);letter-spacing:.28em;margin-top:10px;padding-left:.28em;}
+  .hero-eyebrow{margin:34px 0 10px;}
+  .hero-sub{font-style:italic;color:var(--dim);font-size:clamp(1.02rem,2.6vw,1.22rem);max-width:36ch;margin:20px auto 0;text-wrap:balance;}
+  .hero-rule{font-family:var(--sans);font-weight:600;font-size:clamp(.95rem,2.4vw,1.08rem);letter-spacing:.04em;color:var(--moss);margin:18px auto 0;max-width:40ch;}
+  .hero-meta{margin-top:30px;}
+  .scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--slate);font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;}
+  .hero-flower{width:min(170px,40vw);height:auto;filter:drop-shadow(0 0 30px rgba(139,124,240,.35));animation:sway 8s ease-in-out infinite;}
+  @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2.5deg)}}
+  @media (prefers-reduced-motion:reduce){.hero-flower{animation:none;}}
+
+  /* ---------- waypoints ---------- */
+  section.wp{padding:76px 0 64px;position:relative;}
+  .wp-head{text-align:center;margin-bottom:8px;}
+  .wp-head .num{font-family:var(--serif);color:var(--lantern);font-size:1.15rem;letter-spacing:.3em;display:block;margin-top:30px;}
+  .wp-head h2{font-size:clamp(1.7rem,4.5vw,2.25rem);font-weight:500;letter-spacing:.02em;margin:10px 0 4px;text-wrap:balance;}
+  .wp-head .when{font-family:var(--sans);font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--slate);}
+
+  #edge{background:linear-gradient(180deg, var(--edge) 0%, var(--edge) 78%, var(--glade) 100%);}
+  #glade{background:linear-gradient(180deg, var(--glade) 0%, var(--glade) 82%, var(--deep) 100%);}
+  #deepwoods{background:linear-gradient(180deg, var(--deep) 0%, var(--deep) 84%, var(--dawn) 100%);}
+  #morning{background:linear-gradient(180deg, var(--dawn) 0%, #202A3C 100%);}
+
+  #glade .label{color:var(--lantern);}
+  #deepwoods .wp-head .num{color:var(--violet);}
+  #deepwoods .label{color:var(--glow);}
+  #morning .wp-head .num{color:var(--blush);}
+
+  .blocks{display:flex;flex-direction:column;gap:18px;margin-top:26px;}
+  .blk{
+    background:color-mix(in srgb, var(--panel) 82%, transparent);
+    border:1px solid var(--panel-edge);
+    border-left:3px solid var(--bc, var(--fern));
+    border-radius:6px;padding:18px 20px;
+    display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  }
+  .blk.no-icon{grid-template-columns:1fr;}
+  .blk .icon{width:74px;height:74px;flex:0 0 auto;margin-top:2px;}
+  .blk h3{font-size:1.16rem;font-weight:600;letter-spacing:.04em;margin:0 0 4px;color:var(--ivory);}
+  .blk h3 .tag{font-family:var(--sans);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bc,var(--moss));display:block;margin-bottom:5px;}
+  .blk p{margin:0;color:var(--dim);}
+  .blk p b{color:var(--ivory);}
+  #deepwoods .blk{background:rgba(20,14,36,.72);border-color:#2A2144;}
+  .intro{color:var(--dim);text-align:center;max-width:46ch;margin:18px auto 0;}
+  .intro b{color:var(--ivory);}
+
+  /* ---------- art slots ---------- */
+  .art{margin:34px 0 0;border-radius:10px;overflow:hidden;border:1px solid var(--panel-edge);}
+  .art img{width:100%;height:auto;display:block;}
+  .art-slot{
+    aspect-ratio:1800/1004;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+    background:
+      radial-gradient(420px 200px at 50% 30%, rgba(139,124,240,.08), transparent 70%),
+      repeating-linear-gradient(-45deg, rgba(140,191,138,.04) 0 14px, transparent 14px 28px),
+      var(--panel);
+  }
+  .art-slot .label{color:var(--slate);}
+  .art figcaption{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--slate);padding:8px 12px;border-top:1px solid var(--panel-edge);}
+
+  /* ---------- anointment / oracle ---------- */
+  #anointment{background:linear-gradient(180deg,#202A3C 0%, #1A2230 100%);padding:70px 0;}
+  .oracle-btn{
+    font-family:var(--sans);font-size:.85rem;font-weight:600;letter-spacing:.06em;
+    background:transparent;color:var(--glow);border:1px solid var(--glow);border-radius:3px;
+    padding:10px 18px;cursor:pointer;margin-top:18px;
+  }
+  .oracle-btn:hover{background:rgba(124,227,139,.1);}
+  .oracle-out{font-style:italic;color:var(--ivory);margin-top:12px;min-height:1.4em;}
+  .oracle-out b{color:var(--glow);font-style:normal;}
+
+  #wear{background:#1A2230;padding:24px 0 70px;}
+  footer{background:linear-gradient(180deg,#1A2230 0%, #151B26 100%);padding:60px 22px 80px;text-align:center;}
+  footer .vine-rule{margin-bottom:34px;}
+  footer p{max-width:56ch;margin:8px auto;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.is-in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  @media (max-width:560px){
+    section.wp{padding:58px 0 48px;}
+    .blk{grid-template-columns:1fr;}
+    .blk .icon{width:64px;height:64px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="ff-field" aria-hidden="true">
+    <span class="ff" style="left:12%;top:30%;animation-delay:0s;"></span>
+    <span class="ff ff--g" style="left:78%;top:22%;animation-delay:2.2s;"></span>
+    <span class="ff" style="left:64%;top:64%;animation-delay:4.1s;"></span>
+    <span class="ff ff--v" style="left:28%;top:70%;animation-delay:6s;"></span>
+  </div>
+
+  <!-- the night-flower -->
+  <svg class="hero-flower" viewBox="0 0 200 230" role="img" aria-label="A wildflower, glowing faintly in the dark">
+    <defs>
+      <radialGradient id="petalG" cx="50%" cy="38%" r="70%">
+        <stop offset="0%" stop-color="#B9AEF7"/>
+        <stop offset="60%" stop-color="#8B7CF0"/>
+        <stop offset="100%" stop-color="#5F4FC0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="100" cy="88" r="58" fill="#8B7CF0" opacity=".14"/>
+    <path d="M100 118 C96 158 104 186 100 212" fill="none" stroke="#4E7A54" stroke-width="6" stroke-linecap="round"/>
+    <path d="M100 156 C82 148 70 152 58 144 C70 134 88 138 100 148 Z" fill="#4E7A54"/>
+    <path d="M100 178 C118 170 130 174 142 166 C130 156 112 160 100 170 Z" fill="#4E7A54"/>
+    <g fill="url(#petalG)">
+      <ellipse cx="100" cy="52" rx="17" ry="30"/>
+      <ellipse cx="134" cy="76" rx="17" ry="30" transform="rotate(72 134 76)"/>
+      <ellipse cx="121" cy="116" rx="17" ry="30" transform="rotate(144 121 116)"/>
+      <ellipse cx="79" cy="116" rx="17" ry="30" transform="rotate(216 79 116)"/>
+      <ellipse cx="66" cy="76" rx="17" ry="30" transform="rotate(288 66 76)"/>
+    </g>
+    <circle cx="100" cy="88" r="15" fill="#E8C476"/>
+    <circle cx="100" cy="88" r="15" fill="none" stroke="#C99436" stroke-width="2"/>
+  </svg>
+
+  <p class="label label--gold hero-eyebrow">Dan ✕ Teek present</p>
+  <h1>SUMMER<span class="numerals">MMXXVI</span></h1>
+  <p class="hero-sub">An enchanted forest. One weekend a year.</p>
+  <p class="hero-rule">The deeper you go, the weirder it gets.</p>
+  <p class="label hero-meta" style="color:var(--slate);">Orchard Hill Estate · Harriman, NY · Jul 30 – Aug 2</p>
+  <div class="scroll-hint" aria-hidden="true">into the trees ↓</div>
+</header>
+
+<!-- ============ WAYPOINT I ============ -->
+<section class="wp" id="edge">
+  <div class="ff-field" aria-hidden="true">
+    <span class="ff ff--g" style="left:18%;top:24%;animation-delay:1s;"></span>
+    <span class="ff" style="left:84%;top:58%;animation-delay:3.4s;"></span>
+  </div>
+  <div class="wrap reveal">
+    <div class="wp-head">
+      <div class="vine-rule"></div>
+      <span class="num">I</span>
+      <h2>The Edge of the Woods</h2>
+      <span class="when">Friday · Jul 31</span>
+    </div>
+    <p class="intro">Friday is easy. Arrive whenever. Claim a bed, test the pool, dinner one at the long table. The woods keep their distance. <b>For now.</b></p>
+    <div class="blocks">
+      <div class="blk no-icon" style="--bc:var(--lantern);">
+        <div>
+          <h3><span class="tag">After dark</span>SARDINES</h3>
+          <p>Lights out. One of us hides; find them, and you hide with them too. The house goes quiet one person at a time, until someone is walking the dark halls alone. <b>The forest loves this game.</b></p>
+        </div>
+      </div>
+    </div>
+    <figure class="art reveal">
+      <div class="art-slot"><span class="label">Friday, at the treeline</span><span class="smallprint">the forest is developing the film</span></div>
+      <figcaption>FRIDAY — AT THE TREELINE</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WAYPOINT II ============ -->
+<section class="wp" id="glade">
+  <div class="wrap reveal">
+    <div class="wp-head">
+      <div class="vine-rule"></div>
+      <span class="num">II</span>
+      <h2>The Glade</h2>
+      <span class="when">Saturday · Aug 1 · daylight</span>
+    </div>
+    <p class="intro">Morning. The glade opens: pool, water artillery, zero obligations.</p>
+    <div class="blocks">
+
+      <div class="blk" style="--bc:var(--moss);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A gorilla wearing sunglasses and a flower crown">
+          <ellipse cx="60" cy="70" rx="38" ry="34" fill="#2E3B33"/>
+          <circle cx="26" cy="58" r="9" fill="#2E3B33"/>
+          <circle cx="94" cy="58" r="9" fill="#2E3B33"/>
+          <path d="M30 62 C30 38 90 38 90 62 L90 70 C90 50 30 50 30 70 Z" fill="#3C4F43"/>
+          <ellipse cx="60" cy="82" rx="24" ry="18" fill="#C9C2B2"/>
+          <ellipse cx="52" cy="78" rx="3.6" ry="4.6" fill="#1A231E"/>
+          <ellipse cx="68" cy="78" rx="3.6" ry="4.6" fill="#1A231E"/>
+          <path d="M48 92 C54 96 66 96 72 92" fill="none" stroke="#1A231E" stroke-width="2.6" stroke-linecap="round"/>
+          <rect x="36" y="56" width="48" height="11" rx="5.5" fill="#101613"/>
+          <rect x="30" y="58" width="8" height="6" rx="3" fill="#101613"/>
+          <rect x="82" y="58" width="8" height="6" rx="3" fill="#101613"/>
+          <g>
+            <circle cx="42" cy="40" r="6" fill="#E36BB0"/><circle cx="42" cy="40" r="2.4" fill="#E8C476"/>
+            <circle cx="60" cy="35" r="6" fill="#8B7CF0"/><circle cx="60" cy="35" r="2.4" fill="#E8C476"/>
+            <circle cx="78" cy="40" r="6" fill="#E36BB0"/><circle cx="78" cy="40" r="2.4" fill="#E8C476"/>
+          </g>
+        </svg>
+        <div>
+          <h3><span class="tag">The Beast</span>GORILLA IN THE MIDDLE</h3>
+          <p>Every forest has a Beast. The glade is his; the title is Jonny’s. <b>Challengers welcome and doomed.</b></p>
+        </div>
+      </div>
+
+      <div class="blk" style="--bc:#E3A9C4;">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A holy cow wearing a flower crown">
+          <ellipse cx="22" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(-18 22 58)"/>
+          <ellipse cx="98" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(18 98 58)"/>
+          <ellipse cx="21" cy="58" rx="8" ry="4" fill="#E3A9C4" transform="rotate(-18 21 58)"/>
+          <ellipse cx="99" cy="58" rx="8" ry="4" fill="#E3A9C4" transform="rotate(18 99 58)"/>
+          <path d="M38 46 C34 38 36 32 42 28" fill="none" stroke="#E8C476" stroke-width="4" stroke-linecap="round"/>
+          <path d="M82 46 C86 38 84 32 78 28" fill="none" stroke="#E8C476" stroke-width="4" stroke-linecap="round"/>
+          <rect x="32" y="42" width="56" height="58" rx="24" fill="#F2EAD8"/>
+          <path d="M36 52 C36 44 50 42 54 50 C58 58 48 66 40 63 C35 61 36 56 36 52 Z" fill="#1A2438"/>
+          <circle cx="47" cy="64" r="3.4" fill="#101613"/>
+          <circle cx="73" cy="64" r="3.4" fill="#101613"/>
+          <rect x="40" y="76" width="40" height="22" rx="11" fill="#E3A9C4"/>
+          <circle cx="52" cy="87" r="3" fill="#B26A8B"/>
+          <circle cx="68" cy="87" r="3" fill="#B26A8B"/>
+          <g>
+            <circle cx="42" cy="34" r="6" fill="#8B7CF0"/><circle cx="42" cy="34" r="2.4" fill="#E8C476"/>
+            <circle cx="60" cy="29" r="6" fill="#E36BB0"/><circle cx="60" cy="29" r="2.4" fill="#E8C476"/>
+            <circle cx="78" cy="34" r="6" fill="#8B7CF0"/><circle cx="78" cy="34" r="2.4" fill="#E8C476"/>
+          </g>
+        </svg>
+        <div>
+          <h3><span class="tag">The Grove</span>ARTEMIS</h3>
+          <p>Every enchanted forest has a sacred creature. Ours is a cow. Her name is Artemis. She has always been here. <b>Bring her flowers.</b></p>
+        </div>
+      </div>
+
+      <div class="blk" style="--bc:#C25B4E;">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A bouncy castle shaped like a giant toadstool, one bouncer mid-air">
+          <path d="M60 22 C30 22 16 44 16 56 C16 62 22 64 30 63 C38 62 50 60 60 60 C70 60 82 62 90 63 C98 64 104 62 104 56 C104 44 90 22 60 22 Z" fill="#C25B4E"/>
+          <circle cx="42" cy="40" r="6" fill="#F2EAD8" opacity=".9"/>
+          <circle cx="68" cy="32" r="4.6" fill="#F2EAD8" opacity=".9"/>
+          <circle cx="84" cy="46" r="5.4" fill="#F2EAD8" opacity=".9"/>
+          <path d="M40 62 L44 100 C54 104 66 104 76 100 L80 62 C66 60 54 60 40 62 Z" fill="#E8DCC2"/>
+          <path d="M52 100 L52 78 C52 70 68 70 68 78 L68 100 Z" fill="#2E3B33"/>
+          <circle cx="60" cy="12" r="5" fill="#2E3B33"/>
+          <path d="M52 14 C54 10 66 10 68 14" fill="none" stroke="#2E3B33" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M44 8 C48 4 52 4 54 6 M76 8 C72 4 68 4 66 6" fill="none" stroke="#8CBF8A" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+        </svg>
+        <div>
+          <h3><span class="tag">The apparatus</span>THE BOUNCY MUSHROOM</h3>
+          <p>A castle-sized toadstool, inflated by unknown means. <b>Bounce until the forest spins.</b></p>
+        </div>
+      </div>
+
+      <div class="blk no-icon" style="--bc:var(--lantern);">
+        <div>
+          <h3><span class="tag">Golden hour</span>THE BANQUET</h3>
+          <p>One long table, thirty-two chairs, set where the lawn meets the trees. A feast appears. <b>Nobody asks who set it.</b></p>
+        </div>
+      </div>
+
+    </div>
+    <figure class="art reveal">
+      <div class="art-slot"><span class="label">Saturday, in the glade</span><span class="smallprint">the forest is developing the film</span></div>
+      <figcaption>SATURDAY — IN THE GLADE</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WAYPOINT III ============ -->
+<section class="wp" id="deepwoods">
+  <div class="ff-field" aria-hidden="true">
+    <span class="ff" style="left:8%;top:18%;animation-delay:.6s;"></span>
+    <span class="ff ff--v" style="left:88%;top:26%;animation-delay:2s;"></span>
+    <span class="ff" style="left:72%;top:70%;animation-delay:3.2s;"></span>
+    <span class="ff ff--v" style="left:22%;top:78%;animation-delay:5s;"></span>
+    <span class="ff" style="left:48%;top:40%;animation-delay:7s;"></span>
+    <span class="ff ff--g" style="left:35%;top:15%;animation-delay:8s;"></span>
+  </div>
+  <div class="wrap reveal">
+    <div class="wp-head">
+      <div class="vine-rule"></div>
+      <span class="num">III</span>
+      <h2>The Deep Woods</h2>
+      <span class="when">Saturday · Aug 1 · after dark</span>
+    </div>
+    <p class="intro"><b>At dark, the woods wake up.</b></p>
+    <div class="blocks">
+
+      <div class="blk" style="--bc:var(--violet);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A dark pine tree with beams of colored light fanning up behind it">
+          <g opacity=".85">
+            <path d="M60 74 L18 18 L34 24 Z" fill="#8B7CF0" opacity=".5"/>
+            <path d="M60 74 L44 10 L58 14 Z" fill="#7CE38B" opacity=".5"/>
+            <path d="M60 74 L76 10 L62 14 Z" fill="#E8C476" opacity=".5"/>
+            <path d="M60 74 L102 18 L86 24 Z" fill="#E36BB0" opacity=".5"/>
+          </g>
+          <path d="M60 30 L38 66 L48 66 L32 92 L88 92 L72 66 L82 66 Z" fill="#1A2620"/>
+          <rect x="55" y="92" width="10" height="12" fill="#2E3B33"/>
+          <circle cx="28" cy="44" r="3" fill="#7CE38B"/>
+          <circle cx="92" cy="40" r="3" fill="#8B7CF0"/>
+          <circle cx="60" cy="18" r="3" fill="#E8C476"/>
+        </svg>
+        <div>
+          <h3><span class="tag">Nightfall</span>DANNY’S LIGHT SHOW</h3>
+          <p>He’s been talking to the trees all year. <b>At nightfall, they answer.</b></p>
+        </div>
+      </div>
+
+      <div class="blk no-icon" style="--bc:var(--glow);">
+        <div>
+          <h3><span class="tag">Night → late</span>THE REVELS</h3>
+          <p>The rave. Stutter house &amp; bass, glow on every branch. The dance ends when the forest says so. <a href="djs.html">DJ hunt is live ↗</a></p>
+        </div>
+      </div>
+
+      <div class="blk no-icon" style="--bc:var(--violet);">
+        <div>
+          <h3><span class="tag">Past the last lantern</span>THE LIGHTS</h3>
+          <p>Deeper in, there are lights. Nobody agrees on what they are. Every year somebody loses a few hours and comes back different. <b>They always come back. So far.</b></p>
+        </div>
+      </div>
+
+    </div>
+    <figure class="art reveal">
+      <div class="art-slot"><span class="label">Saturday night, deep in</span><span class="smallprint">the forest is developing the film</span></div>
+      <figcaption>SATURDAY NIGHT — DEEP IN</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WAYPOINT IV ============ -->
+<section class="wp" id="morning">
+  <div class="wrap reveal">
+    <div class="wp-head">
+      <div class="vine-rule"></div>
+      <span class="num">IV</span>
+      <h2>The Morning After</h2>
+      <span class="when">Sunday · Aug 2</span>
+    </div>
+    <p class="intro">Sunlight. Floats. Testimony compared over coffee — <b>the stories will not match.</b></p>
+    <div class="blocks">
+      <div class="blk no-icon" style="--bc:var(--blush);">
+        <div>
+          <h3><span class="tag">Midday</span>THE GROUP PHOTO</h3>
+          <p>All of us in one frame. <b>Proof it happened.</b></p>
+        </div>
+      </div>
+    </div>
+    <p class="intro" style="margin-top:26px;">Departures in the afternoon. The forest lets you leave. <b>Everyone comes back eventually.</b></p>
+  </div>
+</section>
+
+<!-- ============ THE ANOINTMENT ============ -->
+<section id="anointment">
+  <div class="wrap reveal" style="text-align:center;">
+    <div class="vine-rule"></div>
+    <p class="label label--gold" style="margin-top:34px;">One more thing</p>
+    <h2 style="font-size:clamp(1.7rem,4.5vw,2.25rem);font-weight:500;margin:10px 0 4px;">The Anointment</h2>
+    <p style="color:var(--dim);max-width:48ch;margin:14px auto;">At an hour nobody will announce, every guest is anointed: a spirit of something weirdly specific, read from a tree-scroll, crowned on the spot. No appeals. The Committee holds the scrolls. <b style="color:var(--ivory);">Thirty-two walk in. Thirty-two spirits walk out.</b></p>
+    <button class="oracle-btn" id="oracleBtn" type="button">Ask the forest: what are you the spirit of?</button>
+    <p class="oracle-out" id="oracleOut" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ WHAT TO WEAR ============ -->
+<section id="wear">
+  <div class="wrap reveal" style="text-align:center;">
+    <p class="label" style="color:var(--moss);">What to wear</p>
+    <p style="color:var(--dim);max-width:48ch;margin:14px auto 0;">Come as the forest imagines you: wings, antlers, flower crowns, moss, glitter, things that glow. Day — <b style="color:var(--ivory);">garden creature</b>. Night — <b style="color:var(--ivory);">fairy-struck</b>.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="vine-rule"></div>
+  <p class="smallprint">Orchard Hill Estate · Harriman, NY · July 30 – August 2 · carved into a tree, non-negotiable</p>
+  <p class="smallprint">Capacity: thirty-two. The forest counted.</p>
+  <p class="smallprint">Sub-pages: <a href="djs.html">The DJ Hunt 🎧</a> · <a href="anointments.html">The Anointments 📜</a></p>
+  <p class="smallprint">No golden apples on this page. One is hidden on the property.</p>
+</footer>
+
+<script>
+  (function(){
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('is-in'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+        });
+      }, {threshold:.12});
+      els.forEach(function(el){ io.observe(el); });
+    }
+
+    var spirits = [
+      "Spirit of the Aux, Keeper of the One True Dongle",
+      "Warden of the Cooler’s Sacred Ratio",
+      "Sprite of Reapplied Sunscreen, Interval-Blessed",
+      "Will-o’-the-Wisp of “who’s driving?”",
+      "Keeper of the Perfect Float, Undisturbed and Unbothered",
+      "Moth of the Second Wind (arrives ~11:40 PM)",
+      "Guardian of Phones Found in the Grass",
+      "Herald of the Playlist Transition Nobody Noticed (Perfect)",
+      "Cupbearer to the Cow",
+      "Nymph of the Bouncy Mushroom, Bruised but Ascendant",
+      "Keeper of the Sacred Snacks, First to the Chips, Last to Judge",
+      "Spirit of the Sardine Dark, Patient Beyond Reason",
+      "Dryad of Leaving Sunday at a Reasonable Hour (worship extinct)"
+    ];
+    var btn = document.getElementById('oracleBtn');
+    var out = document.getElementById('oracleOut');
+    if (btn && out){
+      btn.addEventListener('click', function(){
+        var pick = spirits[Math.floor(Math.random()*spirits.length)];
+        out.innerHTML = 'The forest has decided. You are: <b>' + pick + '</b>';
+      });
+    }
+  })();
+</script>
+</body>
+</html>
