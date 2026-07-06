@@ -111,6 +111,22 @@
   .intro{color:var(--dim);text-align:center;max-width:46ch;margin:18px auto 0;}
   .intro b{color:var(--ivory);}
 
+  /* ---------- trios ---------- */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;align-items:stretch;}
+  .tcard{
+    background:color-mix(in srgb, var(--panel) 82%, transparent);
+    border:1px solid var(--panel-edge);border-top:3px solid var(--tc,var(--fern));
+    border-radius:8px;padding:24px 18px 22px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .tcard .icon{width:96px;height:96px;}
+  .tcard .tag{font-family:var(--sans);font-size:.64rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--tc,var(--moss));margin:2px 0 0;}
+  .tcard h3{font-size:1.22rem;font-weight:600;letter-spacing:.05em;margin:0;color:var(--ivory);}
+  .tcard p{margin:2px 0 0;color:var(--dim);font-size:.95rem;line-height:1.6;}
+  .tcard p b{color:var(--ivory);}
+  #deepwoods .tcard{background:rgba(20,14,36,.72);border-color:#2A2144;border-top-color:var(--tc,var(--violet));}
+  @media (max-width:700px){.trio{grid-template-columns:1fr;}}
+
   /* ---------- art slots ---------- */
   .art{margin:34px 0 0;border-radius:10px;overflow:hidden;border:1px solid var(--panel-edge);}
   .art img{width:100%;height:auto;display:block;}
@@ -162,28 +178,57 @@
     <span class="ff ff--v" style="left:28%;top:70%;animation-delay:6s;"></span>
   </div>
 
-  <!-- the night-flower -->
-  <svg class="hero-flower" viewBox="0 0 200 230" role="img" aria-label="A wildflower, glowing faintly in the dark">
+  <!-- the enchanted orchard: one bough, one impossible apple -->
+  <svg class="hero-flower" viewBox="0 0 240 210" role="img" aria-label="An orchard bough at night — apple blossoms, fireflies, and one golden apple glowing in the dark">
     <defs>
-      <radialGradient id="petalG" cx="50%" cy="38%" r="70%">
-        <stop offset="0%" stop-color="#B9AEF7"/>
-        <stop offset="60%" stop-color="#8B7CF0"/>
-        <stop offset="100%" stop-color="#5F4FC0"/>
+      <radialGradient id="appleGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#E8C476" stop-opacity=".55"/>
+        <stop offset="60%" stop-color="#E8C476" stop-opacity=".16"/>
+        <stop offset="100%" stop-color="#E8C476" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="appleBody" cx="38%" cy="32%" r="80%">
+        <stop offset="0%" stop-color="#F7DE9B"/>
+        <stop offset="55%" stop-color="#E8C476"/>
+        <stop offset="100%" stop-color="#A8781F"/>
       </radialGradient>
     </defs>
-    <circle cx="100" cy="88" r="58" fill="#8B7CF0" opacity=".14"/>
-    <path d="M100 118 C96 158 104 186 100 212" fill="none" stroke="#4E7A54" stroke-width="6" stroke-linecap="round"/>
-    <path d="M100 156 C82 148 70 152 58 144 C70 134 88 138 100 148 Z" fill="#4E7A54"/>
-    <path d="M100 178 C118 170 130 174 142 166 C130 156 112 160 100 170 Z" fill="#4E7A54"/>
-    <g fill="url(#petalG)">
-      <ellipse cx="100" cy="52" rx="17" ry="30"/>
-      <ellipse cx="134" cy="76" rx="17" ry="30" transform="rotate(72 134 76)"/>
-      <ellipse cx="121" cy="116" rx="17" ry="30" transform="rotate(144 121 116)"/>
-      <ellipse cx="79" cy="116" rx="17" ry="30" transform="rotate(216 79 116)"/>
-      <ellipse cx="66" cy="76" rx="17" ry="30" transform="rotate(288 66 76)"/>
+    <!-- bough -->
+    <path d="M8 44 C56 30 118 26 176 44 C196 51 214 62 228 76" fill="none" stroke="#4A3A2A" stroke-width="9" stroke-linecap="round"/>
+    <path d="M70 36 C78 24 90 16 104 12" fill="none" stroke="#4A3A2A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M150 38 C158 30 170 24 184 22" fill="none" stroke="#4A3A2A" stroke-width="5" stroke-linecap="round"/>
+    <!-- leaves -->
+    <ellipse cx="52" cy="30" rx="13" ry="5.5" fill="#4E7A54" transform="rotate(-28 52 30)"/>
+    <ellipse cx="130" cy="24" rx="13" ry="5.5" fill="#4E7A54" transform="rotate(-12 130 24)"/>
+    <ellipse cx="196" cy="46" rx="13" ry="5.5" fill="#4E7A54" transform="rotate(24 196 46)"/>
+    <ellipse cx="88" cy="46" rx="12" ry="5" fill="#3D6244" transform="rotate(16 88 46)"/>
+    <!-- blossoms -->
+    <g>
+      <g transform="translate(104,14)">
+        <circle cx="-7" cy="-2" r="5.5" fill="#EFE2EE"/><circle cx="7" cy="-2" r="5.5" fill="#EFE2EE"/>
+        <circle cx="-4" cy="6" r="5.5" fill="#E3CFE2"/><circle cx="4" cy="6" r="5.5" fill="#E3CFE2"/>
+        <circle cx="0" cy="-7" r="5.5" fill="#F6EDF5"/><circle cx="0" cy="0" r="3.4" fill="#E8C476"/>
+      </g>
+      <g transform="translate(186,20)">
+        <circle cx="-6" cy="-2" r="4.8" fill="#EFE2EE"/><circle cx="6" cy="-2" r="4.8" fill="#EFE2EE"/>
+        <circle cx="-3.5" cy="5" r="4.8" fill="#E3CFE2"/><circle cx="3.5" cy="5" r="4.8" fill="#E3CFE2"/>
+        <circle cx="0" cy="-6" r="4.8" fill="#F6EDF5"/><circle cx="0" cy="0" r="3" fill="#E8C476"/>
+      </g>
+      <g transform="translate(30,40)">
+        <circle cx="-5" cy="-2" r="4.2" fill="#E3CFE2"/><circle cx="5" cy="-2" r="4.2" fill="#E3CFE2"/>
+        <circle cx="-3" cy="4.5" r="4.2" fill="#D6BFD6"/><circle cx="3" cy="4.5" r="4.2" fill="#D6BFD6"/>
+        <circle cx="0" cy="-5.5" r="4.2" fill="#EFE2EE"/><circle cx="0" cy="0" r="2.6" fill="#E8C476"/>
+      </g>
     </g>
-    <circle cx="100" cy="88" r="15" fill="#E8C476"/>
-    <circle cx="100" cy="88" r="15" fill="none" stroke="#C99436" stroke-width="2"/>
+    <!-- the golden apple, hanging low -->
+    <circle cx="120" cy="118" r="52" fill="url(#appleGlow)"/>
+    <path d="M120 62 L120 84" stroke="#4A3A2A" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="131" cy="82" rx="10" ry="4.4" fill="#4E7A54" transform="rotate(-24 131 82)"/>
+    <path d="M120 90 C104 82 90 92 90 112 C90 132 104 146 120 146 C136 146 150 132 150 112 C150 92 136 82 120 90 Z" fill="url(#appleBody)"/>
+    <ellipse cx="108" cy="104" rx="6" ry="10" fill="#FFF6DC" opacity=".4" transform="rotate(-18 108 104)"/>
+    <!-- fireflies -->
+    <circle cx="58" cy="86" r="2.6" fill="#7CE38B"/><circle cx="58" cy="86" r="6" fill="#7CE38B" opacity=".22"/>
+    <circle cx="206" cy="104" r="2.2" fill="#7CE38B"/><circle cx="206" cy="104" r="5" fill="#7CE38B" opacity=".2"/>
+    <circle cx="170" cy="150" r="2" fill="#8B7CF0"/><circle cx="170" cy="150" r="4.6" fill="#8B7CF0" opacity=".22"/>
   </svg>
 
   <p class="label label--gold hero-eyebrow">Dan ✕ Teek present</p>
@@ -232,35 +277,10 @@
       <h2>The Glade</h2>
       <span class="when">Saturday · Aug 1 · daylight</span>
     </div>
-    <p class="intro">Morning. The glade opens: pool, water artillery, zero obligations.</p>
-    <div class="blocks">
+    <p class="intro">Morning. The glade opens: pool, sun, zero obligations. <b>Meet the glade.</b></p>
+    <div class="trio">
 
-      <div class="blk" style="--bc:var(--moss);">
-        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A gorilla wearing sunglasses and a flower crown">
-          <ellipse cx="60" cy="70" rx="38" ry="34" fill="#2E3B33"/>
-          <circle cx="26" cy="58" r="9" fill="#2E3B33"/>
-          <circle cx="94" cy="58" r="9" fill="#2E3B33"/>
-          <path d="M30 62 C30 38 90 38 90 62 L90 70 C90 50 30 50 30 70 Z" fill="#3C4F43"/>
-          <ellipse cx="60" cy="82" rx="24" ry="18" fill="#C9C2B2"/>
-          <ellipse cx="52" cy="78" rx="3.6" ry="4.6" fill="#1A231E"/>
-          <ellipse cx="68" cy="78" rx="3.6" ry="4.6" fill="#1A231E"/>
-          <path d="M48 92 C54 96 66 96 72 92" fill="none" stroke="#1A231E" stroke-width="2.6" stroke-linecap="round"/>
-          <rect x="36" y="56" width="48" height="11" rx="5.5" fill="#101613"/>
-          <rect x="30" y="58" width="8" height="6" rx="3" fill="#101613"/>
-          <rect x="82" y="58" width="8" height="6" rx="3" fill="#101613"/>
-          <g>
-            <circle cx="42" cy="40" r="6" fill="#E36BB0"/><circle cx="42" cy="40" r="2.4" fill="#E8C476"/>
-            <circle cx="60" cy="35" r="6" fill="#8B7CF0"/><circle cx="60" cy="35" r="2.4" fill="#E8C476"/>
-            <circle cx="78" cy="40" r="6" fill="#E36BB0"/><circle cx="78" cy="40" r="2.4" fill="#E8C476"/>
-          </g>
-        </svg>
-        <div>
-          <h3><span class="tag">The Beast</span>GORILLA IN THE MIDDLE</h3>
-          <p>Every forest has a Beast. The glade is his; the title is Jonny’s. <b>Challengers welcome and doomed.</b></p>
-        </div>
-      </div>
-
-      <div class="blk" style="--bc:#E3A9C4;">
+      <div class="tcard" style="--tc:#E3A9C4;">
         <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A holy cow wearing a flower crown">
           <ellipse cx="22" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(-18 22 58)"/>
           <ellipse cx="98" cy="58" rx="14" ry="8" fill="#F2EAD8" transform="rotate(18 98 58)"/>
@@ -281,35 +301,51 @@
             <circle cx="78" cy="34" r="6" fill="#8B7CF0"/><circle cx="78" cy="34" r="2.4" fill="#E8C476"/>
           </g>
         </svg>
-        <div>
-          <h3><span class="tag">The Grove</span>ARTEMIS</h3>
-          <p>Every enchanted forest has a sacred creature. Ours is a cow. Her name is Artemis. She has always been here. <b>Bring her flowers.</b></p>
-        </div>
+        <p class="tag">The sacred creature</p>
+        <h3>ARTEMIS</h3>
+        <p>Every enchanted forest keeps one. Ours is a cow. In 2024 she was waiting on this lawn when we arrived — and she never left. The forest grew around her. <b>Bring her flowers.</b></p>
       </div>
 
-      <div class="blk" style="--bc:#C25B4E;">
-        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A bouncy castle shaped like a giant toadstool, one bouncer mid-air">
-          <path d="M60 22 C30 22 16 44 16 56 C16 62 22 64 30 63 C38 62 50 60 60 60 C70 60 82 62 90 63 C98 64 104 62 104 56 C104 44 90 22 60 22 Z" fill="#C25B4E"/>
-          <circle cx="42" cy="40" r="6" fill="#F2EAD8" opacity=".9"/>
-          <circle cx="68" cy="32" r="4.6" fill="#F2EAD8" opacity=".9"/>
-          <circle cx="84" cy="46" r="5.4" fill="#F2EAD8" opacity=".9"/>
-          <path d="M40 62 L44 100 C54 104 66 104 76 100 L80 62 C66 60 54 60 40 62 Z" fill="#E8DCC2"/>
-          <path d="M52 100 L52 78 C52 70 68 70 68 78 L68 100 Z" fill="#2E3B33"/>
-          <circle cx="60" cy="12" r="5" fill="#2E3B33"/>
-          <path d="M52 14 C54 10 66 10 68 14" fill="none" stroke="#2E3B33" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M44 8 C48 4 52 4 54 6 M76 8 C72 4 68 4 66 6" fill="none" stroke="#8CBF8A" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <div class="tcard" style="--tc:#C25B4E;">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A striped carnival tent standing between pine trees">
+          <path d="M14 100 L26 64 L38 100 Z" fill="#22301F"/>
+          <path d="M82 100 L94 58 L106 100 Z" fill="#22301F"/>
+          <path d="M60 18 L60 8" stroke="#4A3A2A" stroke-width="3" stroke-linecap="round"/>
+          <path d="M60 8 L76 13 L60 19 Z" fill="#E8C476"/>
+          <path d="M60 18 C40 26 28 42 26 58 L94 58 C92 42 80 26 60 18 Z" fill="#C25B4E"/>
+          <path d="M26 58 C30 64 36 64 40 58 C44 64 50 64 54 58 C58 64 64 64 68 58 C72 64 78 64 82 58 C86 64 92 64 94 58 L94 62 L26 62 Z" fill="#F2EAD8"/>
+          <path d="M30 62 L34 102 L86 102 L90 62 Z" fill="#C25B4E"/>
+          <rect x="41" y="62" width="9" height="40" fill="#F2EAD8"/>
+          <rect x="59" y="62" width="9" height="40" fill="#F2EAD8"/>
+          <rect x="77" y="62" width="9" height="40" fill="#F2EAD8"/>
+          <path d="M52 102 L52 80 C52 71 68 71 68 80 L68 102 Z" fill="#1A231E"/>
+          <circle cx="22" cy="42" r="2.2" fill="#7CE38B"/><circle cx="22" cy="42" r="5" fill="#7CE38B" opacity=".2"/>
+          <circle cx="100" cy="36" r="2" fill="#8B7CF0"/><circle cx="100" cy="36" r="4.6" fill="#8B7CF0" opacity=".2"/>
         </svg>
-        <div>
-          <h3><span class="tag">The apparatus</span>THE BOUNCY MUSHROOM</h3>
-          <p>A castle-sized toadstool, inflated by unknown means. <b>Bounce until the forest spins.</b></p>
-        </div>
+        <p class="tag">Her festival</p>
+        <h3>THE CARNIVAL</h3>
+        <p>It assembles around her by unknown means: a bouncy castle, limbo, sumo suits, the annual water war. <b>Dignity optional. Prizes unclear.</b></p>
       </div>
 
-      <div class="blk no-icon" style="--bc:var(--lantern);">
-        <div>
-          <h3><span class="tag">Golden hour</span>THE BANQUET</h3>
-          <p>One long table, thirty-two chairs, set where the lawn meets the trees. A feast appears. <b>Nobody asks who set it.</b></p>
-        </div>
+      <div class="tcard" style="--tc:var(--moss);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A crowned gorilla rising from the middle of a pool">
+          <ellipse cx="60" cy="88" rx="46" ry="11" fill="none" stroke="#6FB3C8" stroke-width="2" opacity=".45"/>
+          <ellipse cx="60" cy="88" rx="32" ry="7.5" fill="none" stroke="#6FB3C8" stroke-width="2" opacity=".65"/>
+          <path d="M22 88 C22 74 32 66 40 62 C42 48 50 38 60 38 C70 38 78 48 80 62 C88 66 98 74 98 88 Z" fill="#1E2A22"/>
+          <circle cx="60" cy="46" r="17" fill="#1E2A22"/>
+          <circle cx="53" cy="45" r="2.8" fill="#F2EAD8"/>
+          <circle cx="67" cy="45" r="2.8" fill="#F2EAD8"/>
+          <path d="M54 55 C57 57 63 57 66 55" fill="none" stroke="#8A9891" stroke-width="2" stroke-linecap="round"/>
+          <g transform="rotate(-10 60 28)">
+            <path d="M48 32 L51 20 L57 28 L60 18 L63 28 L69 20 L72 32 Z" fill="#E8C476"/>
+          </g>
+          <circle cx="30" cy="76" r="2.4" fill="#F2EAD8" opacity=".8"/>
+          <circle cx="92" cy="72" r="2" fill="#F2EAD8" opacity=".8"/>
+          <circle cx="86" cy="80" r="1.6" fill="#F2EAD8" opacity=".6"/>
+        </svg>
+        <p class="tag">Her games</p>
+        <h3>THE POOL CONQUEST</h3>
+        <p>The pool crowns one champion: Gorilla in the Middle. Jonny has held the title for as long as anyone can remember. The forest respects this. <b>Challengers welcome and doomed.</b></p>
       </div>
 
     </div>
@@ -317,6 +353,14 @@
       <div class="art-slot"><span class="label">Saturday, in the glade</span><span class="smallprint">the forest is developing the film</span></div>
       <figcaption>SATURDAY — IN THE GLADE</figcaption>
     </figure>
+    <div class="blocks">
+      <div class="blk no-icon" style="--bc:var(--lantern);">
+        <div>
+          <h3><span class="tag">Golden hour</span>THE BANQUET</h3>
+          <p>A long table appears at the treeline: thirty-two chairs, a real chef, unreal amounts of food. <b>The forest does not do potlucks.</b></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -337,41 +381,63 @@
       <h2>The Deep Woods</h2>
       <span class="when">Saturday · Aug 1 · after dark</span>
     </div>
-    <p class="intro"><b>At dark, the woods wake up.</b></p>
-    <div class="blocks">
+    <p class="intro"><b>At dark, the woods wake up.</b> The night runs in three acts.</p>
+    <div class="trio">
 
-      <div class="blk" style="--bc:var(--violet);">
-        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A dark pine tree with beams of colored light fanning up behind it">
-          <g opacity=".85">
-            <path d="M60 74 L18 18 L34 24 Z" fill="#8B7CF0" opacity=".5"/>
-            <path d="M60 74 L44 10 L58 14 Z" fill="#7CE38B" opacity=".5"/>
-            <path d="M60 74 L76 10 L62 14 Z" fill="#E8C476" opacity=".5"/>
-            <path d="M60 74 L102 18 L86 24 Z" fill="#E36BB0" opacity=".5"/>
-          </g>
-          <path d="M60 30 L38 66 L48 66 L32 92 L88 92 L72 66 L82 66 Z" fill="#1A2620"/>
-          <rect x="55" y="92" width="10" height="12" fill="#2E3B33"/>
-          <circle cx="28" cy="44" r="3" fill="#7CE38B"/>
-          <circle cx="92" cy="40" r="3" fill="#8B7CF0"/>
-          <circle cx="60" cy="18" r="3" fill="#E8C476"/>
+      <div class="tcard" style="--tc:var(--lantern);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="Colored beams of light rising from the treeline into the night">
+          <path d="M54 100 L20 20 L34 16 L62 100 Z" fill="#8B7CF0" opacity=".5"/>
+          <path d="M56 100 L52 12 L68 12 L64 100 Z" fill="#7CE38B" opacity=".5"/>
+          <path d="M58 100 L86 16 L100 20 L66 100 Z" fill="#E8C476" opacity=".5"/>
+          <path d="M6 102 L16 74 L26 102 Z" fill="#171126"/>
+          <path d="M94 102 L104 70 L114 102 Z" fill="#171126"/>
+          <rect x="0" y="100" width="120" height="4" fill="#171126"/>
+          <circle cx="26" cy="34" r="2.6" fill="#8B7CF0"/><circle cx="26" cy="34" r="6" fill="#8B7CF0" opacity=".25"/>
+          <circle cx="60" cy="8" r="2.6" fill="#7CE38B"/><circle cx="60" cy="8" r="6" fill="#7CE38B" opacity=".25"/>
+          <circle cx="94" cy="34" r="2.6" fill="#E8C476"/><circle cx="94" cy="34" r="6" fill="#E8C476" opacity=".25"/>
         </svg>
-        <div>
-          <h3><span class="tag">Nightfall</span>DANNY’S LIGHT SHOW</h3>
-          <p>He’s been talking to the trees all year. <b>At nightfall, they answer.</b></p>
-        </div>
+        <p class="tag">Act I · nightfall</p>
+        <h3>THE WAKING</h3>
+        <p>It begins with the light show. Danny has been talking to the trees all year — <b>at nightfall, they answer.</b></p>
       </div>
 
-      <div class="blk no-icon" style="--bc:var(--glow);">
-        <div>
-          <h3><span class="tag">Night → late</span>THE REVELS</h3>
-          <p>The rave. Stutter house &amp; bass, glow on every branch. The dance ends when the forest says so. <a href="djs.html">DJ hunt is live ↗</a></p>
-        </div>
+      <div class="tcard" style="--tc:var(--glow);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A moth circling a glowing lantern hung from a branch">
+          <path d="M6 22 C34 14 74 14 114 24" fill="none" stroke="#4A3A2A" stroke-width="5" stroke-linecap="round"/>
+          <path d="M52 22 L52 34" stroke="#4A3A2A" stroke-width="3"/>
+          <circle cx="52" cy="56" r="26" fill="#E8C476" opacity=".14"/>
+          <rect x="42" y="34" width="20" height="30" rx="6" fill="#2E281E" stroke="#C99436" stroke-width="2"/>
+          <circle cx="52" cy="49" r="7.5" fill="#E8C476"/>
+          <circle cx="52" cy="49" r="11" fill="#E8C476" opacity=".3"/>
+          <g transform="rotate(18 88 74)">
+            <ellipse cx="80" cy="72" rx="12" ry="7" fill="#C9CFE0" opacity=".95" transform="rotate(-30 80 72)"/>
+            <ellipse cx="96" cy="72" rx="12" ry="7" fill="#C9CFE0" opacity=".95" transform="rotate(30 96 72)"/>
+            <ellipse cx="81" cy="82" rx="8" ry="5" fill="#A9B2C8" opacity=".9" transform="rotate(-38 81 82)"/>
+            <ellipse cx="95" cy="82" rx="8" ry="5" fill="#A9B2C8" opacity=".9" transform="rotate(38 95 82)"/>
+            <ellipse cx="88" cy="77" rx="3" ry="8" fill="#5C5648"/>
+            <path d="M86 69 C84 65 81 63 78 62 M90 69 C92 65 95 63 98 62" fill="none" stroke="#5C5648" stroke-width="1.6" stroke-linecap="round"/>
+          </g>
+          <circle cx="24" cy="88" r="2" fill="#7CE38B"/><circle cx="24" cy="88" r="4.6" fill="#7CE38B" opacity=".22"/>
+        </svg>
+        <p class="tag">Act II · the dance</p>
+        <h3>THE REVELS</h3>
+        <p>Then the rave: stutter house &amp; bass, glow on every branch, until the forest says stop. <b>It has never said stop.</b> <a href="djs.html">DJ hunt is live ↗</a></p>
       </div>
 
-      <div class="blk no-icon" style="--bc:var(--violet);">
-        <div>
-          <h3><span class="tag">Past the last lantern</span>THE LIGHTS</h3>
-          <p>Deeper in, there are lights. Nobody agrees on what they are. Every year somebody loses a few hours and comes back different. <b>They always come back. So far.</b></p>
-        </div>
+      <div class="tcard" style="--tc:var(--violet);">
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="Unexplained lights rising between dark tree trunks">
+          <rect x="14" y="10" width="9" height="94" rx="4.5" fill="#171126"/>
+          <rect x="94" y="4" width="11" height="100" rx="5.5" fill="#171126"/>
+          <rect x="56" y="16" width="7" height="88" rx="3.5" fill="#1E1733"/>
+          <circle cx="42" cy="78" r="5" fill="#7CE38B"/><circle cx="42" cy="78" r="10" fill="#7CE38B" opacity=".25"/>
+          <circle cx="74" cy="54" r="7" fill="#8B7CF0"/><circle cx="74" cy="54" r="14" fill="#8B7CF0" opacity=".25"/>
+          <circle cx="52" cy="28" r="9" fill="#E8C476"/><circle cx="52" cy="28" r="17" fill="#E8C476" opacity=".22"/>
+          <circle cx="86" cy="90" r="2" fill="#C9CFE0" opacity=".8"/>
+          <circle cx="30" cy="40" r="1.7" fill="#C9CFE0" opacity=".7"/>
+        </svg>
+        <p class="tag">Act III · deeper</p>
+        <h3>THE LIGHTS</h3>
+        <p>Past the last lantern there are lights. Nobody agrees on what they are. Every year someone loses a few hours and comes back different. <b>They always come back. So far.</b></p>
       </div>
 
     </div>
@@ -408,7 +474,23 @@
 <section id="anointment">
   <div class="wrap reveal" style="text-align:center;">
     <div class="vine-rule"></div>
-    <p class="label label--gold" style="margin-top:34px;">One more thing</p>
+    <svg style="width:86px;height:86px;margin-top:30px;filter:drop-shadow(0 0 18px rgba(232,196,118,.25));" viewBox="0 0 120 120" role="img" aria-label="A tree-scroll sealed in wax, with a leaf sprig">
+      <path d="M24 84 C40 62 48 42 78 26" fill="none" stroke="#4E7A54" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="44" cy="62" rx="10" ry="4.4" fill="#4E7A54" transform="rotate(-40 44 62)"/>
+      <ellipse cx="66" cy="38" rx="10" ry="4.4" fill="#4E7A54" transform="rotate(-32 66 38)"/>
+      <rect x="30" y="38" width="60" height="48" rx="4" fill="#F2EAD8"/>
+      <path d="M30 38 q-9 0 -9 9 v30 q0 9 9 9 Z" fill="#C9C2B2"/>
+      <path d="M90 38 q9 0 9 9 v30 q0 9 -9 9 Z" fill="#C9C2B2"/>
+      <g stroke="#8A9891" stroke-width="2.6" stroke-linecap="round">
+        <line x1="40" y1="51" x2="80" y2="51"/>
+        <line x1="40" y1="61" x2="80" y2="61"/>
+        <line x1="40" y1="71" x2="64" y2="71"/>
+      </g>
+      <circle cx="78" cy="74" r="7.5" fill="#C99436"/>
+      <circle cx="78" cy="74" r="7.5" fill="none" stroke="#8F6B22" stroke-width="1.6"/>
+      <circle cx="98" cy="30" r="2.2" fill="#7CE38B"/><circle cx="98" cy="30" r="5" fill="#7CE38B" opacity=".22"/>
+    </svg>
+    <p class="label label--gold" style="margin-top:16px;">One more thing</p>
     <h2 style="font-size:clamp(1.7rem,4.5vw,2.25rem);font-weight:500;margin:10px 0 4px;">The Anointment</h2>
     <p style="color:var(--dim);max-width:48ch;margin:14px auto;">At an hour nobody will announce, every guest is anointed: a spirit of something weirdly specific, read from a tree-scroll, crowned on the spot. No appeals. The Committee holds the scrolls. <b style="color:var(--ivory);">Thirty-two walk in. Thirty-two spirits walk out.</b></p>
     <button class="oracle-btn" id="oracleBtn" type="button">Ask the forest: what are you the spirit of?</button>
