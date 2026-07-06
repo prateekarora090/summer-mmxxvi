@@ -127,6 +127,27 @@
   #deepwoods .tcard{background:rgba(20,14,36,.72);border-color:#2A2144;border-top-color:var(--tc,var(--violet));}
   @media (max-width:700px){.trio{grid-template-columns:1fr;}}
 
+  .banquet{
+    max-width:480px;margin:30px auto 0;text-align:center;
+    background:linear-gradient(170deg, rgba(232,196,118,.09), color-mix(in srgb, var(--panel) 82%, transparent) 62%);
+    border:1px solid var(--panel-edge);border-top:3px solid var(--lantern);
+    border-radius:8px;padding:26px 22px 24px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .banquet .icon{width:128px;height:110px;}
+  .banquet h3{font-size:1.22rem;font-weight:600;letter-spacing:.05em;margin:0;color:var(--ivory);}
+  .banquet p{margin:2px 0 0;color:var(--dim);font-size:.98rem;}
+  .banquet p b{color:var(--ivory);}
+  .flame{transform-origin:center 80%;animation:flick 1.4s ease-in-out infinite alternate;}
+  .flame.f2{animation-duration:1.1s;animation-delay:.3s;}
+  .flame.f3{animation-duration:1.7s;animation-delay:.6s;}
+  @keyframes flick{
+    0%{transform:scaleY(1) translateX(0);}
+    45%{transform:scaleY(.82) translateX(.6px);}
+    100%{transform:scaleY(1.12) translateX(-.5px);}
+  }
+  @media (prefers-reduced-motion:reduce){.flame{animation:none;}}
+
   /* ---------- art slots ---------- */
   .art{margin:34px 0 0;border-radius:10px;overflow:hidden;border:1px solid var(--panel-edge);}
   .art img{width:100%;height:auto;display:block;}
@@ -257,7 +278,7 @@
       <div class="blk no-icon" style="--bc:var(--lantern);">
         <div>
           <h3><span class="tag">After dark</span>SARDINES</h3>
-          <p>Lights out. One of us hides; find them, and you hide with them too. The house goes quiet one person at a time, until someone is walking the dark halls alone. <b>The forest loves this game.</b></p>
+          <p>Lights out. One hides; whoever finds them hides too — until someone’s alone in the dark. <b>The forest loves this game.</b></p>
         </div>
       </div>
     </div>
@@ -303,7 +324,7 @@
         </svg>
         <p class="tag">The sacred creature</p>
         <h3>ARTEMIS</h3>
-        <p>Every enchanted forest keeps one. Ours is a cow. In 2024 she was waiting on this lawn when we arrived — and she never left. The forest grew around her. <b>Bring her flowers.</b></p>
+        <p>Every enchanted forest keeps one. Ours was waiting on this lawn in 2024 — and never left. Things have been named after her since. <b>Bring her flowers.</b></p>
       </div>
 
       <div class="tcard" style="--tc:#C25B4E;">
@@ -324,28 +345,26 @@
         </svg>
         <p class="tag">Her festival</p>
         <h3>THE CARNIVAL</h3>
-        <p>It assembles around her by unknown means: a bouncy castle, limbo, sumo suits, the annual water war. <b>Dignity optional. Prizes unclear.</b></p>
+        <p>Assembles around her overnight: inflatables, contests, the water war. <b>Dignity optional. Prizes unclear.</b></p>
       </div>
 
       <div class="tcard" style="--tc:var(--moss);">
-        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A crowned gorilla rising from the middle of a pool">
-          <ellipse cx="60" cy="88" rx="46" ry="11" fill="none" stroke="#6FB3C8" stroke-width="2" opacity=".45"/>
-          <ellipse cx="60" cy="88" rx="32" ry="7.5" fill="none" stroke="#6FB3C8" stroke-width="2" opacity=".65"/>
-          <path d="M22 88 C22 74 32 66 40 62 C42 48 50 38 60 38 C70 38 78 48 80 62 C88 66 98 74 98 88 Z" fill="#1E2A22"/>
-          <circle cx="60" cy="46" r="17" fill="#1E2A22"/>
-          <circle cx="53" cy="45" r="2.8" fill="#F2EAD8"/>
-          <circle cx="67" cy="45" r="2.8" fill="#F2EAD8"/>
-          <path d="M54 55 C57 57 63 57 66 55" fill="none" stroke="#8A9891" stroke-width="2" stroke-linecap="round"/>
-          <g transform="rotate(-10 60 28)">
-            <path d="M48 32 L51 20 L57 28 L60 18 L63 28 L69 20 L72 32 Z" fill="#E8C476"/>
+        <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="A crowned head lurking just above the pool's surface">
+          <ellipse cx="60" cy="86" rx="34" ry="16" fill="#1E2A22" opacity=".3"/>
+          <path d="M36 72 C36 54 84 54 84 72 Z" fill="#1E2A22"/>
+          <circle cx="50" cy="66" r="3.2" fill="#F2EAD8"/>
+          <circle cx="70" cy="66" r="3.2" fill="#F2EAD8"/>
+          <g transform="rotate(-8 60 46)">
+            <path d="M46 52 L50 38 L57 47 L60 36 L63 47 L70 38 L74 52 Z" fill="#E8C476"/>
           </g>
-          <circle cx="30" cy="76" r="2.4" fill="#F2EAD8" opacity=".8"/>
-          <circle cx="92" cy="72" r="2" fill="#F2EAD8" opacity=".8"/>
-          <circle cx="86" cy="80" r="1.6" fill="#F2EAD8" opacity=".6"/>
+          <path d="M4 74 C18 69 32 78 46 74 C60 70 74 79 88 74 C98 71 108 76 116 73" fill="none" stroke="#6FB3C8" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+          <path d="M14 84 C28 80 44 87 60 84 C76 81 92 87 106 83" fill="none" stroke="#6FB3C8" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+          <circle cx="90" cy="60" r="2" fill="#6FB3C8" opacity=".8"/>
+          <circle cx="30" cy="62" r="1.7" fill="#6FB3C8" opacity=".7"/>
         </svg>
         <p class="tag">Her games</p>
         <h3>THE POOL CONQUEST</h3>
-        <p>The pool crowns one champion: Gorilla in the Middle. Jonny has held the title for as long as anyone can remember. The forest respects this. <b>Challengers welcome and doomed.</b></p>
+        <p>Gorilla in the Middle. One champion: <b>Jonny</b>. <b>Challengers welcome and doomed.</b></p>
       </div>
 
     </div>
@@ -353,13 +372,32 @@
       <div class="art-slot"><span class="label">Saturday, in the glade</span><span class="smallprint">the forest is developing the film</span></div>
       <figcaption>SATURDAY — IN THE GLADE</figcaption>
     </figure>
-    <div class="blocks">
-      <div class="blk no-icon" style="--bc:var(--lantern);">
-        <div>
-          <h3><span class="tag">Golden hour</span>THE BANQUET</h3>
-          <p>A long table appears at the treeline: thirty-two chairs, a real chef, unreal amounts of food. <b>The forest does not do potlucks.</b></p>
-        </div>
-      </div>
+    <div class="banquet reveal">
+      <svg class="icon" viewBox="0 0 140 120" role="img" aria-label="A long candlelit table set beneath a branch, flames flickering">
+        <path d="M6 18 C40 8 100 8 134 20" fill="none" stroke="#4A3A2A" stroke-width="5" stroke-linecap="round"/>
+        <ellipse cx="40" cy="14" rx="11" ry="4.6" fill="#4E7A54" transform="rotate(-16 40 14)"/>
+        <ellipse cx="104" cy="15" rx="11" ry="4.6" fill="#4E7A54" transform="rotate(14 104 15)"/>
+        <g class="flame f1"><ellipse cx="46" cy="46" rx="4" ry="7" fill="#E8C476"/></g>
+        <circle cx="46" cy="46" r="10" fill="#E8C476" opacity=".14"/>
+        <g class="flame f2"><ellipse cx="70" cy="40" rx="4.6" ry="8" fill="#F0D28C"/></g>
+        <circle cx="70" cy="40" r="12" fill="#E8C476" opacity=".16"/>
+        <g class="flame f3"><ellipse cx="94" cy="47" rx="4" ry="7" fill="#E8C476"/></g>
+        <circle cx="94" cy="47" r="10" fill="#E8C476" opacity=".14"/>
+        <rect x="43" y="52" width="6" height="18" rx="2" fill="#F2EAD8"/>
+        <rect x="67" y="47" width="6" height="23" rx="2" fill="#F2EAD8"/>
+        <rect x="91" y="53" width="6" height="17" rx="2" fill="#F2EAD8"/>
+        <rect x="14" y="72" width="112" height="8" rx="3" fill="#7A5A38"/>
+        <rect x="24" y="80" width="7" height="22" fill="#5C4329"/>
+        <rect x="109" y="80" width="7" height="22" fill="#5C4329"/>
+        <circle cx="32" cy="69" r="4.6" fill="none" stroke="#C9C2B2" stroke-width="2"/>
+        <circle cx="57" cy="69" r="4.6" fill="none" stroke="#C9C2B2" stroke-width="2"/>
+        <circle cx="82" cy="69" r="4.6" fill="none" stroke="#C9C2B2" stroke-width="2"/>
+        <circle cx="107" cy="69" r="4.6" fill="none" stroke="#C9C2B2" stroke-width="2"/>
+        <circle cx="128" cy="34" r="2.2" fill="#7CE38B"/><circle cx="128" cy="34" r="5" fill="#7CE38B" opacity=".22"/>
+      </svg>
+      <p class="tag" style="color:var(--lantern);">Golden hour</p>
+      <h3>THE BANQUET</h3>
+      <p>A long table appears at the treeline: real chef, unreal amounts of food. <b>The forest does not do potlucks.</b></p>
     </div>
   </div>
 </section>
@@ -398,7 +436,7 @@
         </svg>
         <p class="tag">Act I · nightfall</p>
         <h3>THE WAKING</h3>
-        <p>It begins with the light show. Danny has been talking to the trees all year — <b>at nightfall, they answer.</b></p>
+        <p>The light show. Danny’s been talking to the trees all year — <b>tonight they answer.</b></p>
       </div>
 
       <div class="tcard" style="--tc:var(--glow);">
@@ -421,7 +459,7 @@
         </svg>
         <p class="tag">Act II · the dance</p>
         <h3>THE REVELS</h3>
-        <p>Then the rave: stutter house &amp; bass, glow on every branch, until the forest says stop. <b>It has never said stop.</b> <a href="djs.html">DJ hunt is live ↗</a></p>
+        <p>Stutter house &amp; bass until the forest says stop. <b>It has never said stop.</b> <a href="djs.html">DJ hunt ↗</a></p>
       </div>
 
       <div class="tcard" style="--tc:var(--violet);">
@@ -437,7 +475,7 @@
         </svg>
         <p class="tag">Act III · deeper</p>
         <h3>THE LIGHTS</h3>
-        <p>Past the last lantern there are lights. Nobody agrees on what they are. Every year someone loses a few hours and comes back different. <b>They always come back. So far.</b></p>
+        <p>Past the last lantern: lights. People lose hours and come back different. <b>They come back. So far.</b></p>
       </div>
 
     </div>
@@ -457,16 +495,8 @@
       <h2>The Morning After</h2>
       <span class="when">Sunday · Aug 2</span>
     </div>
-    <p class="intro">Sunlight. Floats. Testimony compared over coffee — <b>the stories will not match.</b></p>
-    <div class="blocks">
-      <div class="blk no-icon" style="--bc:var(--blush);">
-        <div>
-          <h3><span class="tag">Midday</span>THE GROUP PHOTO</h3>
-          <p>All of us in one frame. <b>Proof it happened.</b></p>
-        </div>
-      </div>
-    </div>
-    <p class="intro" style="margin-top:26px;">Departures in the afternoon. The forest lets you leave. <b>Everyone comes back eventually.</b></p>
+    <p class="intro">Sunday is soft: coffee, floats, testimony that won’t match. Then the forest lets you go.</p>
+    <p class="intro" style="margin-top:24px;">And you — <b>you’re one of the thirty-two.</b> It counted you in a long time ago. <b>See you at the treeline. July 30.</b></p>
   </div>
 </section>
 
@@ -492,7 +522,7 @@
     </svg>
     <p class="label label--gold" style="margin-top:16px;">One more thing</p>
     <h2 style="font-size:clamp(1.7rem,4.5vw,2.25rem);font-weight:500;margin:10px 0 4px;">The Anointment</h2>
-    <p style="color:var(--dim);max-width:48ch;margin:14px auto;">At an hour nobody will announce, every guest is anointed: a spirit of something weirdly specific, read from a tree-scroll, crowned on the spot. No appeals. The Committee holds the scrolls. <b style="color:var(--ivory);">Thirty-two walk in. Thirty-two spirits walk out.</b></p>
+    <p style="color:var(--dim);max-width:44ch;margin:14px auto;">Every guest leaves with a title. The forest has been watching for years — <b style="color:var(--ivory);">the scrolls are already written.</b></p>
     <button class="oracle-btn" id="oracleBtn" type="button">Ask the forest: what are you the spirit of?</button>
     <p class="oracle-out" id="oracleOut" aria-live="polite"></p>
   </div>
