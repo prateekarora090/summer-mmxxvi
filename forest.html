@@ -6,6 +6,7 @@
 <title>Summer MMXXVI — The Enchanted Forest</title>
 <meta property="og:title" content="Summer MMXXVI — The Enchanted Forest">
 <meta property="og:description" content="An enchanted forest. One weekend a year. Jul 30 – Aug 2, Harriman NY.">
+<meta property="og:image" content="https://prateekarora090.github.io/summer-mmxxvi/img/invite-poster.jpg">
 <script src="nav.js" defer></script>
 <style>
   :root{
@@ -59,13 +60,26 @@
   }
   @media (prefers-reduced-motion:reduce){.ff{animation:none;opacity:.5;}}
 
+  /* ---------- invitation ---------- */
+  .invite{
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:16px;padding:38px 18px 74px;position:relative;
+    background:linear-gradient(180deg,#0A1216 0%,#0C161A 62%,#0E1513 100%);
+  }
+  .invite img{
+    width:auto;height:auto;max-height:82vh;max-width:min(92vw,540px);
+    border-radius:8px;
+    box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 140px rgba(232,196,118,.07);
+  }
+  .invite-hosts{font-family:var(--sans);font-size:.66rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--slate);margin:0;opacity:.85;}
+
   /* ---------- hero ---------- */
   .hero{
     min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;position:relative;overflow:hidden;padding:80px 20px 60px;
     background:linear-gradient(180deg, #0E1513 0%, var(--hero) 55%, var(--edge) 100%);
   }
-  .hero h1{font-size:clamp(2.7rem,10vw,5rem);font-weight:500;letter-spacing:.06em;line-height:1.04;margin:0;text-wrap:balance;}
+  .hero h1{font-size:clamp(2.7rem,10vw,5rem);font-weight:500;letter-spacing:.06em;line-height:1.04;margin:28px 0 0;text-wrap:balance;}
   .hero h1 .numerals{display:block;color:var(--lantern);font-size:clamp(1.6rem,5.5vw,2.6rem);letter-spacing:.28em;margin-top:10px;padding-left:.28em;}
   .hero-eyebrow{margin:34px 0 10px;}
   .hero-sub{font-style:italic;color:var(--dim);font-size:clamp(1.02rem,2.6vw,1.22rem);max-width:36ch;margin:20px auto 0;text-wrap:balance;}
@@ -190,6 +204,13 @@
 </head>
 <body>
 
+<!-- ============ INVITATION ============ -->
+<section class="invite" id="invite">
+  <img src="img/invite-poster.jpg" width="1080" height="1350" fetchpriority="high" alt="You are cordially invited to The Midsummer Bacchanalia — a night of whimsy and revelry. Friday, July 31st to Sunday, August 2nd."/>
+  <p class="invite-hosts">hosted by Dan ✕ Teek</p>
+  <div class="scroll-hint" aria-hidden="true">the forest awaits ↓</div>
+</section>
+
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="ff-field" aria-hidden="true">
@@ -252,7 +273,6 @@
     <circle cx="170" cy="150" r="2" fill="#8B7CF0"/><circle cx="170" cy="150" r="4.6" fill="#8B7CF0" opacity=".22"/>
   </svg>
 
-  <p class="label label--gold hero-eyebrow">Dan ✕ Teek present</p>
   <h1>SUMMER<span class="numerals">MMXXVI</span></h1>
   <p class="hero-sub">An enchanted forest. One weekend a year.</p>
   <p class="hero-rule">The deeper you go, the weirder it gets.</p>
